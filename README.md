@@ -109,5 +109,6 @@ zsh-syntax-highlighting
 zsh-autosuggestions
 )
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-``` 
+```
 </details>
+Polybar coming soon
