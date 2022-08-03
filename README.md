@@ -33,7 +33,10 @@ conky -c $HOME/.config/bswpwm/system-overview &
 ```
 
 </details>
-4. Instalar chrome con yay y ponerlo como navegador predeterminado
+
+<details open>
+<summary><strong>Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
+
 ```console
 yay -S google-chrome;
 export BROWSER="";
@@ -47,11 +50,15 @@ Cambiar el de chromium por chrome:
 ```console
 google-chrome-stable
 ```
+</details>
 
-5. Cambiar de bash a zsh
+<details open>
+<summary><strong>Cambiar de bash a zsh y configurarla</strong></summary>
+
 ```console
 sudo chsh $USER -s /bin/zsh;
 sudo chsh root -s /bin/zsh;
 ```
 
 Hacer un relog pulsando Super + X y despues L 
+</details>
