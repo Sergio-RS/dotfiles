@@ -8,10 +8,10 @@ Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-edition
 escoger la version bspwm
 
 Quemar la ISO a un pen con https://www.balena.io/etcher/
-<details>
+</details>
 
 <details open>
-<summary><strong>&nbsp;Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio<strong><summary> 
+<summary><strong>Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio</strong></summary> 
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 ```console
@@ -32,7 +32,7 @@ dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 conky -c $HOME/.config/bswpwm/system-overview &
 ```
 
-<details>
+</details>
 4. Instalar chrome con yay y ponerlo como navegador predeterminado
 ```console
 yay -S google-chrome;
