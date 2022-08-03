@@ -93,10 +93,6 @@ Cerramos la terminal, abrimos otra y hacemos
 ```console
 p10k configure
 ```
-```console
-p10k configure
-```
-
 Ahora instalamos los plugins en el directorio deseado
 ```console
 cd;
