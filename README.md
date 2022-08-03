@@ -34,5 +34,21 @@ yay -S google-chrome;
 export BROWSER="";
 xdg-settings set default-web-browser google-chrome.desktop
 ```
+Poner un comando para iniciarlo:
+```console
+nano ~/.config/bspwm/sxhkd/sxhkdrc
+```
+Cambiar el de chromium por chrome:
+```console
+google-chrome-stable
+```
+
+5. Cambiar de bash a zsh
+```console
+sudo chsh $USER -s /bin/zsh;
+sudo chsh root -s /bin/zsh;
+```
+
+Hacer un relog pulsando Super + X y despues L 
 
 </details>
