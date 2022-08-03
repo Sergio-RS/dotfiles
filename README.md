@@ -3,13 +3,17 @@
 </div>
 
 <details open>
-<summary><strong>&nbsp;I N S T A L L A T I O N &nbsp;🛠</strong></summary>
-<br>
+<summary><strong>Instalar arcolinuxB bspwm</strong></summary>
+Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-editions/files/ y 
+escoger la version bspwm
 
-1. Instalar arcolinuxB bspwm
+Quemar la ISO a un pen con https://www.balena.io/etcher/
+<details>
 
-2. Desinstalar variety para que no cambie fondo de pantalla
+<details open>
+<summary><strong>&nbsp;Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio<strong><summary> 
 
+Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 ```console
 sudo pacman -Rns variety
 ```
@@ -28,6 +32,7 @@ dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 conky -c $HOME/.config/bswpwm/system-overview &
 ```
 
+<details>
 4. Instalar chrome con yay y ponerlo como navegador predeterminado
 ```console
 yay -S google-chrome;
@@ -50,5 +55,3 @@ sudo chsh root -s /bin/zsh;
 ```
 
 Hacer un relog pulsando Super + X y despues L 
-
-</details>
