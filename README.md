@@ -93,6 +93,9 @@ Cerramos la terminal, abrimos otra y hacemos
 ```console
 p10k configure
 ```
+```console
+p10k configure
+```
 
 Ahora instalamos los plugins en el directorio deseado
 ```console
@@ -100,6 +103,7 @@ cd;
 sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins;
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
 ```
+
 
 En el archivo ~/.zshrc añadimos a plugins y comentamos lo siguiente
 ```console
