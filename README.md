@@ -14,9 +14,18 @@
 sudo pacman -Rns variety
 ```
 
-3. Poner la ruta del nuevo wallpaper en .config/bspwm/autostart.sh. Por ejemplo:
+Poner la ruta del nuevo wallpaper en ~/.config/bspwm/autostart.sh. Por ejemplo:
+
 ```console
 feh --bg-fill $HOME/.config/bspwm/sunset-mountain.jpg &
+```
+
+Eliminar/Comentar las siguientes lineas en ~/.config/bspwm/autostart.sh
+
+```console
+run variety &
+dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
+conky -c $HOME/.config/bswpwm/system-overview &
 ```
 
 4. Instalar chrome con yay y ponerlo como navegador predeterminado
