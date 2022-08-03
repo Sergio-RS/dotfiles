@@ -66,6 +66,7 @@ Hacer un relog pulsando Super + X y despues L
 <details open>
 <summary><strong>5. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
 Primero añadir fuentes necesarias
+
 ```console
 yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete;
 sudo pacman -S powerline-common awesome-terminal-fonts
@@ -85,14 +86,18 @@ cp dotfiles/bspwmrc .config/bspwm/
 
 <details open>
 <summary><strong>6. Configurar zsh</strong></summary>
+
 ```console
 yay -S --noconfirm zsh-theme-powerlevel10k-git;
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc>;
 ```
+
 Cerramos la terminal, abrimos otra y hacemos
+
 ```console
 p10k configure
 ```
+
 Ahora instalamos los plugins en el directorio deseado
 ```console
 cd;
