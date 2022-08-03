@@ -88,7 +88,7 @@ cp dotfiles/bspwmrc .config/bspwm/
 <summary><strong>6. Configurar zsh</strong></summary>
 
 ```console
-yay -S --noconfirm zsh-theme-powerlevel10k-git;
+yay -S zsh-theme-powerlevel10k-git;
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc>;
 ```
 
