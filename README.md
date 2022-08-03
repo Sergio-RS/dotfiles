@@ -57,7 +57,7 @@ google-chrome-stable
 
 ```console
 sudo chsh $USER -s /bin/zsh;
-sudo chsh root -s /bin/zsh;
+sudo chsh root -s /bin/zsh
 ```
 
 Hacer un relog pulsando Super + X y despues L
@@ -66,6 +66,7 @@ Hacer un relog pulsando Super + X y despues L
 <details open>
 <summary><strong>5. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
 Vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
+
 ```console
 cd;
 rm .config/alacritty/alacritty.yml;
