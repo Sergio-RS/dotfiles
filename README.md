@@ -3,7 +3,7 @@
 </div>
 
 <details open>
-<summary><strong>Instalar arcolinuxB bspwm</strong></summary>
+<summary><strong>1. Instalar arcolinuxB bspwm</strong></summary>
 Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-editions/files/ y 
 escoger la version bspwm
 
@@ -11,7 +11,7 @@ Quemar la ISO a un pen con https://www.balena.io/etcher/
 </details>
 
 <details open>
-<summary><strong>Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio</strong></summary> 
+<summary><strong>2. Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio</strong></summary> 
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 ```console
@@ -35,7 +35,7 @@ conky -c $HOME/.config/bswpwm/system-overview &
 </details>
 
 <details open>
-<summary><strong>Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
+<summary><strong>3. Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
 
 ```console
 yay -S google-chrome;
@@ -53,12 +53,31 @@ google-chrome-stable
 </details>
 
 <details open>
-<summary><strong>Cambiar de bash a zsh y configurarla</strong></summary>
+<summary><strong>4. Cambiar de bash a zsh</strong></summary>
 
 ```console
 sudo chsh $USER -s /bin/zsh;
 sudo chsh root -s /bin/zsh;
 ```
 
-Hacer un relog pulsando Super + X y despues L 
+Hacer un relog pulsando Super + X y despues L
+</details>
+
+<details open>
+<summary><strong>5. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
+Vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
+```console
+cd;
+rm .config/alacritty/alacritty.yml;
+cp dotfiles/alacritty.yml .config/alacritty/;
+rm .config/bspwm/picom.conf;
+cp dotfiles/picom.conf .config/bspwm/;
+rm .config/bspwm/bspwmrc;
+cp dotfiles/bspwmrc .config/bspwm/
+```
+</details>
+
+<details open>
+<summary><strong>6. Configurar zsh</strong></summary>
+Coming soon...
 </details>
