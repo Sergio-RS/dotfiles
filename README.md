@@ -65,8 +65,13 @@ Hacer un relog pulsando Super + X y despues L
 
 <details open>
 <summary><strong>5. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
-Vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
+Primero añadir fuentes necesarias
+```console
+yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete;
+sudo pacman -S powerline-common awesome-terminal-fonts
+```
 
+Ahora vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
 ```console
 cd;
 rm .config/alacritty/alacritty.yml;
@@ -80,5 +85,29 @@ cp dotfiles/bspwmrc .config/bspwm/
 
 <details open>
 <summary><strong>6. Configurar zsh</strong></summary>
-Coming soon...
+```console
+yay -S --noconfirm zsh-theme-powerlevel10k-git;
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc>;
+```
+Cerramos la terminal, abrimos otra y hacemos
+```console
+p10k configure
+```
+
+Ahora instalamos los plugins en el directorio deseado
+```console
+cd;
+sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins;
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
+```
+
+En el archivo ~/.zshrc añadimos a plugins y comentamos lo siguiente
+```console
+plugins=(
+git
+zsh-syntax-highlighting
+zsh-autosuggestions
+)
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+``` 
 </details>
