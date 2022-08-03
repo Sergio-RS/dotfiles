@@ -111,4 +111,8 @@ zsh-autosuggestions
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 </details>
-Polybar coming soon
+
+<details open>
+<summary><strong>7. Polybar</strong></summary>
+Coming soon...
+</details>
