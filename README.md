@@ -39,7 +39,18 @@ feh --bg-fill $HOME/.config/bspwm/sunset-mountain.jpg &
 </details>
 
 <details open>
-<summary><strong>3. Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
+<summary><strong>3. Setear sxhkd commands</strong></summary>
+
+```console
+rm -r ~/.config/.config/bspwm/sxhkd/scripts;
+cp -r ~/dotfiles/bspwm/sxhkd/scripts $HOME/.config/bspwm/sxhkd/;
+rm ~/.config/bspwm/sxhkd/sxhkdrc;
+cp ~/dotfiles/bspwm/sxhkd/sxhkdrc
+```
+</details>
+
+<details open>
+<summary><strong>4. Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
 
 ```console
 yay -S google-chrome;
@@ -57,7 +68,7 @@ google-chrome-stable
 </details>
 
 <details open>
-<summary><strong>4. Cambiar de bash a zsh</strong></summary>
+<summary><strong>5. Cambiar de bash a zsh</strong></summary>
 
 ```console
 sudo chsh $USER -s /bin/zsh;
@@ -68,7 +79,7 @@ Hacer un relog pulsando Super + X y despues L
 </details>
 
 <details open>
-<summary><strong>5. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
+<summary><strong>6. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
 Primero añadir fuentes necesarias
 
 ```console
@@ -89,7 +100,7 @@ cp dotfiles/bspwmrc .config/bspwm/
 </details>
 
 <details open>
-<summary><strong>6. Configurar zsh</strong></summary>
+<summary><strong>7. Configurar zsh</strong></summary>
 
 ```console
 yay -S zsh-theme-powerlevel10k-git;
@@ -122,7 +133,7 @@ zsh-autosuggestions
 </details>
 
 <details open>
-<summary><strong>7. Polybar</strong></summary>
+<summary><strong>8. Polybar</strong></summary>
 
 ```console
 cd;
