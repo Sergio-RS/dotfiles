@@ -265,7 +265,7 @@ Descargar Visual Studio Code
 yay -S visual-studio-code-bin
 ```
 
-Configurar rofi
+Configurar rofi (buscador de aplicaciones)
 
 ```console
 rm -rf ~/.config/rofi/*;
