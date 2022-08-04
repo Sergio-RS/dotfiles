@@ -265,4 +265,11 @@ Descargar Visual Studio Code
 yay -S visual-studio-code-bin
 ```
 
+Configurar rofi
+
+```console
+rm -rf ~/.config/rofi/*;
+cp ~/dotfiles/rofi/* ~/.config/rofi
+```
+
 </details>
