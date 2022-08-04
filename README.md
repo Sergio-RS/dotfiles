@@ -6,7 +6,9 @@
 <summary><strong>Instalar arcolinuxB bspwm</strong></summary>
 <br>
 
-Descargar la ISO de <https://sourceforge.net/projects/arcolinux-community-editions/files/> y escoger la version bspwm
+Descargar la ISO de
+<https://sourceforge.net/projects/arcolinux-community-editions/files/> y
+escoger la version bspwm
 
 Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
@@ -220,9 +222,11 @@ pavucontrol
 ```
 
 1. Ir a la pestaña Configuration
-2. Elegir los perfiles que queramos para cada salida de audio. Poner en Off si no queremos usar nunca esa salida
+2. Elegir los perfiles que queramos para cada salida de audio. Poner en Off si
+no queremos usar nunca esa salida
 3. Ir a la pestaña Output Devices
-4. Seleccionar como fallback (cuadrado derecho con icono circular y un tick) el audio principal
+4. Seleccionar como fallback (cuadrado derecho con icono circular y un tick)
+el audio principal
 
 </details>
 
@@ -234,7 +238,8 @@ pavucontrol
 
 Setear Autoenable=true en `/etc/bluetooth/main.conf`
 
-Mirar si el servicio de bluetooth está corriendo. En caso de que no lo estea iniciarlo y activarlo para la siguiente vez que se encienda el pc
+Mirar si el servicio de bluetooth está corriendo. En caso de que no lo estea
+iniciarlo y activarlo para la siguiente vez que se encienda el pc
 
 ```console
 sudo systemctl status bluetooth.service
@@ -265,10 +270,11 @@ connect *MAC*
 #
 
 <details>
-<summary><strong>Setear zsh de root</strong></summary>
+<summary><strong>Configuracion usuario root (zsh, nanorc, fzf...)</strong></summary>
 <br>
 
-Haremos un link simbólico. La zsh de root apuntará a la del usuario normal. Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
+Haremos un link simbólico. La zsh de root apuntará a la del usuario normal.
+Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
 
 ```console
 sudo su;
@@ -281,14 +287,19 @@ p10k configure
 rm -rf powerlevel10k
 ```
 
-Para configurar el prompt de root y que se sepa que somos superusuarios haremos desde root:
+Para configurar el prompt de root y que se sepa que somos superusuarios haremos
+desde root:
 
 ```console
 rm ~/.p10k.zsh
 cp /home/USUARIO/dotfiles/.p10k.zsh ~/
 ```
 
-Para tener en root tambien el fzf tenemos que volver a instalarlo en root. Desde la consola de root:
+Borrar la carpeta `~/.config/nano` para tener las settings comunes que están en
+`/etc/nanorc`
+
+Para tener en root tambien el fzf tenemos que volver a instalarlo en root.
+Desde la consola de root:
 
 ```console
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
