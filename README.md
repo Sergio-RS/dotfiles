@@ -3,15 +3,15 @@
 </div>
 
 <details open>
-<summary><strong>1. Instalar arcolinuxB bspwm</strong></summary>
-Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-editions/files/ y
-escoger la version bspwm
+<summary><strong>Instalar arcolinuxB bspwm</strong></summary>
+
+Descargar la ISO de <https://sourceforge.net/projects/arcolinux-community-editions/files/> y escoger la version bspwm
 
 Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
-<details open>
-<summary><strong>2. Eliminar variety, .config/nanorc, pop-ups inicio y setear fondo de pantalla</strong></summary>
+<details>
+<summary><strong>Eliminar variety, .config/nanorc y pop-ups inicio</strong></summary>
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 
@@ -19,66 +19,58 @@ Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 sudo pacman -Rns variety
 ```
 
-Borrar .config/nanorc. Si queremos cambiar la configuracion de nano esta está en /etc/nanorc
+Borrar `.config/nanorc`. Si queremos cambiar la configuracion de nano está en
+`/etc/nanorc`
 
 ```console
-rm -r .config/nanorc
+rm -r ~/.config/nanorc
 ```
 
-Si tenemos problemas para seleccionar texto y copiarlo en nano comentar la línea set mouse en /etc/nanorc
-Eliminar/Comentar las siguientes lineas en ~/.config/bspwm/autostart.sh
+Para poder seleccionar y copiar con el ratón y wrapear el texto en el
+editor de nano haremos lo siguiente:
 
 ```console
-run variety &
-dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
-conky -c $HOME/.config/bswpwm/system-overview &
-```
-
-Poner la ruta del nuevo wallpaper en ~/.config/bspwm/autostart.sh. Por ejemplo:
-
-```console
-feh --bg-fill $HOME/.config/bspwm/sunset-mountain.jpg &
-```
-
-</details>
-
-<details open>
-<summary><strong>3. Setear sxhkd commands</strong></summary>
-
-```console
-rm -r ~/.config/.config/bspwm/sxhkd/scripts;
-cp -r ~/dotfiles/bspwm/sxhkd/scripts $HOME/.config/bspwm/sxhkd/;
-rm ~/.config/bspwm/sxhkd/sxhkdrc;
-cp ~/dotfiles/bspwm/sxhkd/sxhkdrc
+nano /etc/nanorc
+#Comentar las siguientes líneas:
+#set mouse
+#set linenumber
+#Descomentar la línea:
+#set softwrap
 ```
 
 </details>
 
-<details open>
-<summary><strong>4. Instalar chrome con yay y ponerlo como navegador predeterminado</strong></summary>
+<details>
+<summary><strong>Cambiar archivo de alacritty</strong></summary>
+Primero añadir fuentes necesarias
 
 ```console
-yay -S google-chrome;
-export BROWSER="";
-xdg-settings set default-web-browser google-chrome.desktop
+yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code;
+sudo pacman -S powerline-common awesome-terminal-fonts
 ```
 
-Poner un comando para iniciarlo:
+Ahora vamos a cambiar los archivos de configuracion que pone la distro 
+automaticamente por los mios
 
 ```console
-nano ~/.config/bspwm/sxhkd/sxhkdrc
-```
-
-Cambiar el de chromium por chrome:
-
-```console
-google-chrome-stable
+rm ~/.config/alacritty/alacritty.yml;
+cp ~/dotfiles/alacritty.yml .config/alacritty/
 ```
 
 </details>
 
-<details open>
-<summary><strong>5. Cambiar de bash a zsh</strong></summary>
+<details>
+<summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
+
+```console
+rm -r ~/.config/bspwm/*;
+cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/
+```
+
+</details>
+
+<details>
+<summary><strong>Cambiar de bash a zsh</strong></summary>
 
 ```console
 sudo chsh $USER -s /bin/zsh;
@@ -88,31 +80,8 @@ sudo chsh root -s /bin/zsh
 Hacer un relog pulsando Super + X y despues L
 </details>
 
-<details open>
-<summary><strong>6. Cambiar archivos de alacritty, picom y bspwmrc</strong></summary>
-Primero añadir fuentes necesarias
-
-```console
-yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete;
-sudo pacman -S powerline-common awesome-terminal-fonts
-```
-
-Ahora vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
-
-```console
-cd;
-rm .config/alacritty/alacritty.yml;
-cp dotfiles/alacritty.yml .config/alacritty/;
-rm .config/bspwm/picom.conf;
-cp dotfiles/picom.conf .config/bspwm/;
-rm .config/bspwm/bspwmrc;
-cp dotfiles/bspwmrc .config/bspwm/
-```
-
-</details>
-
-<details open>
-<summary><strong>7. Configurar zsh</strong></summary>
+<details>
+<summary><strong>Configurar zsh</strong></summary>
 
 ```console
 yay -S zsh-theme-powerlevel10k-git;
@@ -128,12 +97,11 @@ p10k configure
 Ahora instalamos los plugins en el directorio deseado
 
 ```console
-cd;
 sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins;
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
 ```
 
-En el archivo ~/.zshrc añadimos a plugins y comentamos lo siguiente
+En el archivo `~/.zshrc` añadimos a plugins y comentamos/borramos lo siguiente
 
 ```console
 plugins=(
@@ -141,20 +109,77 @@ git
 zsh-syntax-highlighting
 zsh-autosuggestions
 )
+#Comentar la siguiente línea o borrarla
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
 </details>
 
-<details open>
-<summary><strong>8. Polybar</strong></summary>
+<details>
+<summary><strong>Setear mi Polybar</strong></summary>
 
 ```console
-cd;
-rm .config/polybar/config;
-rm -rf .config/polybar/scripts;
-cp dotfiles/polybar/config .config/polybar/;
-cp -r dotfiles/polybar/scripts .config/polybar/
+rm -r .config/polybar/*;
+cp -r ~/dotfiles/polybar/* .config/polybar/;
+```
+
+</details>
+
+<details>
+<summary><strong>Instalar chrome con yay y ponerlo como navegador
+predeterminado</strong></summary>
+
+```console
+yay -S google-chrome;
+export BROWSER="";
+xdg-settings set default-web-browser google-chrome.desktop
+```
+
+</details>
+
+<details>
+<summary><strong>Configurar Audio</strong></summary>
+
+```console
+pavucontrol
+```
+
+1. Ir a la pestaña Configuration
+2. Elegir los perfiles que queramos para cada salida de audio. Poner en Off si no queremos usar nunca esa salida
+3. Ir a la pestaña Output Devices
+4. Seleccionar como fallback (cuadrado derecho con icono circular y un tick) el audio principal
+
+</details>
+
+<details>
+<summary><strong>Configurar bluetooth</strong></summary>
+
+Setear Autoenable=true en `/etc/bluetooth/main.conf`
+
+Mirar si el servicio de bluetooth está corriendo. En caso de que no lo estea iniciarlo y activarlo para la siguiente vez que se encienda el pc
+
+```console
+sudo systemctl status bluetooth.service
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
+```
+
+Ahora vamos a configurar algún dispositivo bluetooth
+
+```console
+bluetoothctl
+#Dentro de la consola de bluetoothctl
+power on
+#agent on y default para que conecte automáticamente cualquiera dispositivo bluetooth que estea en modo trusted
+agent on
+default-agent
+#Ahora escaneamos dispositivos
+scan on
+#Una vez tengamos el que queremos 
+trust *MAC* #MAC es la del dispositivo que queremos
+pair *MAC*
+#Nos pedirá o que aceptemos el código o que lo escribamos para hacer el pairing
+connect *MAC*
 ```
 
 </details>
