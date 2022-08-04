@@ -14,7 +14,7 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 <summary><strong>Clonar el repositorio</strong></summary>
 
 ```console
-git clone git@github.com:Sergio-RS/dotfiles.git ~/
+git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
 ```
 
 </details>
@@ -32,7 +32,7 @@ Borrar `.config/nanorc`. Si queremos cambiar la configuracion de nano está en
 `/etc/nanorc`
 
 ```console
-rm -r ~/.config/nanorc
+rm -rf ~/.config/nanorc
 ```
 
 Para poder seleccionar y copiar con el ratón y wrapear el texto en el
@@ -44,7 +44,7 @@ nano /etc/nanorc
 #set mouse
 #set linenumber
 #Descomentar la línea:
-#set softwrap
+set softwrap
 ```
 
 </details>
@@ -72,7 +72,7 @@ cp ~/dotfiles/alacritty.yml .config/alacritty/
 <summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
 
 ```console
-rm -r ~/.config/bspwm/*;
+rm -rf ~/.config/bspwm/*;
 cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/
 ```
 
@@ -110,16 +110,21 @@ sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/p
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
 ```
 
-En el archivo `~/.zshrc` añadimos a plugins y comentamos/borramos lo siguiente
+Borramos archivo `~/.zshrc` y ponemos el que tiene mi configuración
 
 ```console
-plugins=(
-git
-zsh-syntax-highlighting
-zsh-autosuggestions
-)
-#Comentar la siguiente línea o borrarla
-#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+rm ~/.zshrc
+cp ~/dotfiles/.zshrc ~/
+```
+
+</details>
+
+<details>
+<summary><strong>Instalar fzf (para hacer fuzzing por directorios y ctrl + r)</strong></summary>
+
+```console
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
+~/.fzf/install
 ```
 
 </details>
@@ -128,7 +133,7 @@ zsh-autosuggestions
 <summary><strong>Setear mi Polybar</strong></summary>
 
 ```console
-rm -r .config/polybar/*;
+rm -rf .config/polybar/*;
 cp -r ~/dotfiles/polybar/* .config/polybar/;
 ```
 
