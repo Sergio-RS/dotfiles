@@ -153,6 +153,7 @@ alias l.="ls -A | egrep '^\.'"
 alias ga='git add .'
 alias gcmsg='git commit -m'
 alias gp='git push'
+alias gs='git status'
 
 #fix obvious typo's
 alias cd..='cd ..'
