@@ -11,6 +11,17 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
 <details>
+<summary><strong>Actualizar la distro</strong></summary>
+
+```console
+mirror;
+update;
+yay -Syyu
+```
+
+</details>
+
+<details>
 <summary><strong>Clonar el repositorio</strong></summary>
 
 ```console
