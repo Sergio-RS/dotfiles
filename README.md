@@ -258,18 +258,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 </details>
 
 <details>
+<summary><strong>Configurar rofi (buscador de aplicaciones)</strong></summary>
+
+```console
+rm -rf ~/.config/rofi/*;
+cp ~/dotfiles/rofi/* ~/.config/rofi
+```
+
+</details>
+
+<details>
 <summary><strong>Extras</strong></summary>
 Descargar Visual Studio Code
 
 ```console
 yay -S visual-studio-code-bin
-```
-
-Configurar rofi (buscador de aplicaciones)
-
-```console
-rm -rf ~/.config/rofi/*;
-cp ~/dotfiles/rofi/* ~/.config/rofi
 ```
 
 </details>
