@@ -226,4 +226,10 @@ ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
 cat .ssh/id_rsa.pub
 ```
 
+Descargar lsd
+
+```console
+sudo pacman -S lsd
+```
+
 </details>
