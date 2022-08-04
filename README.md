@@ -225,7 +225,7 @@ connect *MAC*
 
 </details>
 
-<details open>
+<details>
 <summary><strong>Setear zsh de root</strong></summary>
 
 Haremos un link simbólico. La zsh de root apuntará a la del usuario normal. Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
