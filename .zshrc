@@ -142,11 +142,17 @@ fi
 ### ALIASES ###
 
 #list
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
+alias ls='lsd --group-dirs=first'
 alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+
+#git
+alias ga='git add .'
+alias gcmsg='git commit -m'
+alias gp='git push'
 
 #fix obvious typo's
 alias cd..='cd ..'
