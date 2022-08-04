@@ -11,6 +11,15 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
 <details>
+<summary><strong>Clonar el repositorio</strong></summary>
+
+```console
+git clone git@github.com:Sergio-RS/dotfiles.git ~/
+```
+
+</details>
+
+<details>
 <summary><strong>Eliminar variety, .config/nanorc y pop-ups inicio</strong></summary>
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
