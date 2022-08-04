@@ -11,25 +11,29 @@ Quemar la ISO a un pen con https://www.balena.io/etcher/
 </details>
 
 <details open>
-<summary><strong>2. Eliminar variety ,setear fondo de pantalla y eliminar pop-ups inicio</strong></summary> 
+<summary><strong>2. Eliminar variety, .config/nanorc, pop-ups inicio y setear fondo de pantalla</strong></summary> 
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 ```console
 sudo pacman -Rns variety
 ```
-
-Poner la ruta del nuevo wallpaper en ~/.config/bspwm/autostart.sh. Por ejemplo:
-
+Borrar .config/nanorc. Si queremos cambiar la configuracion de nano esta está en /etc/nanorc
 ```console
-feh --bg-fill $HOME/.config/bspwm/sunset-mountain.jpg &
+rm -r .config/nanorc
 ```
-
+Si tenemos problemas para seleccionar texto y copiarlo en nano comentar la línea set mouse en /etc/nanorc
 Eliminar/Comentar las siguientes lineas en ~/.config/bspwm/autostart.sh
 
 ```console
 run variety &
 dex $HOME/.config/autostart/arcolinux-welcome-app.desktop
 conky -c $HOME/.config/bswpwm/system-overview &
+```
+
+Poner la ruta del nuevo wallpaper en ~/.config/bspwm/autostart.sh. Por ejemplo:
+
+```console
+feh --bg-fill $HOME/.config/bspwm/sunset-mountain.jpg &
 ```
 
 </details>
@@ -119,5 +123,12 @@ zsh-autosuggestions
 
 <details open>
 <summary><strong>7. Polybar</strong></summary>
-Coming soon...
+
+```console
+cd;
+rm .config/polybar/config;
+rm -rf .config/polybar/scripts;
+cp dotfiles/polybar/config .config/polybar/;
+cp -r dotfiles/polybar/scripts .config/polybar/
+```
 </details>
