@@ -2,8 +2,6 @@
     <h1><strong>DOTFILES</strong></h1>
 </div>
 
-#
-
 <details open>
 <summary><strong>Instalar arcolinuxB bspwm</strong></summary>
 <br>
