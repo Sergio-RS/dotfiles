@@ -11,12 +11,34 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
 <details>
-<summary><strong>Actualizar la distro</strong></summary>
+<summary><strong>Actualizar la distro y instalar dependencias</strong></summary>
 
 ```console
 mirror;
 update;
 yay -Syyu
+```
+
+Setear git config y generar shh key
+
+```console
+git config --global user.name "Sergio-RS";
+git config --global user.email "sergio.rodriguez.seoane@udc.es";
+ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
+cat .ssh/id_rsa.pub
+```
+
+Descargar lsd
+
+```console
+sudo pacman -S lsd
+```
+
+Fuentes necesarias
+
+```console
+yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code;
+sudo pacman -S powerline-common awesome-terminal-fonts
 ```
 
 </details>
@@ -62,14 +84,8 @@ set softwrap
 
 <details>
 <summary><strong>Cambiar archivo de alacritty</strong></summary>
-Primero añadir fuentes necesarias
 
-```console
-yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code;
-sudo pacman -S powerline-common awesome-terminal-fonts
-```
-
-Ahora vamos a cambiar los archivos de configuracion que pone la distro 
+Ahora vamos a cambiar los archivos de configuracion que pone la distro
 automaticamente por los mios
 
 ```console
@@ -209,27 +225,44 @@ connect *MAC*
 
 </details>
 
+<details open>
+<summary><strong>Setear zsh de root</strong></summary>
+
+Haremos un link simbólico. La zsh de root apuntará a la del usuario normal. Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
+
+```console
+sudo su;
+ln -s -f /home/USUARIO/.zsh;
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k;
+#Cerramos terminal y abrimos otra
+sudo su;
+p10k configure
+#Borramos el archivo de github
+rm -rf powerlevel10k
+```
+
+Para configurar el prompt de root y que se sepa que somos superusuarios haremos desde root:
+
+```console
+rm ~/.p10k.zsh
+cp /home/USUARIO/dotfiles/.p10k.zsh ~/
+```
+
+Para tener en root tambien el fzf tenemos que volver a instalarlo en root. Desde la consola de root:
+
+```console
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
+~/.fzf/install
+```
+
+</details>
+
 <details>
 <summary><strong>Extras</strong></summary>
 Descargar Visual Studio Code
 
 ```console
 yay -S visual-studio-code-bin
-```
-
-Setear git config y generar shh key
-
-```console
-git config --global user.name "Sergio-RS";
-git config --global user.email "sergio.rodriguez.seoane@udc.es";
-ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
-cat .ssh/id_rsa.pub
-```
-
-Descargar lsd
-
-```console
-sudo pacman -S lsd
 ```
 
 </details>
