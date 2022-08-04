@@ -125,8 +125,12 @@ super + shift + Return
 #	thunar
 
 #dmenu
+#super + shift + d
+	#dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+
+#rofi menu apps
 super + shift + d
-	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+	rofi -show drun -show-icons
 
 #reload sxhkd:
 super + shift + s
