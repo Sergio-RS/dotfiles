@@ -1832,7 +1832,7 @@ format-background = ${colors.background}
 [module/arch-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-arch-updates.sh
-interval = 1000
+interval = 300
 label = Arch: %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -1843,7 +1843,7 @@ format-prefix-foreground = ${colors.foreground}
 [module/aur-updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check-aur-updates.sh
-interval = 1000
+interval = 300
 label = Aur: %output%
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
