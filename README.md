@@ -323,5 +323,3 @@ yay -S visual-studio-code-bin
 ```
 
 </details>
-
-#
