@@ -2,16 +2,22 @@
     <h1><strong>DOTFILES</strong></h1>
 </div>
 
+#
+
 <details open>
 <summary><strong>Instalar arcolinuxB bspwm</strong></summary>
+<br>
 
 Descargar la ISO de <https://sourceforge.net/projects/arcolinux-community-editions/files/> y escoger la version bspwm
 
 Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
+#
+
 <details>
 <summary><strong>Actualizar la distro y instalar dependencias</strong></summary>
+<br>
 
 ```console
 mirror;
@@ -43,8 +49,11 @@ sudo pacman -S powerline-common awesome-terminal-fonts
 
 </details>
 
+#
+
 <details>
 <summary><strong>Clonar el repositorio</strong></summary>
+<br>
 
 ```console
 git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
@@ -52,8 +61,11 @@ git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
 
 </details>
 
+#
+
 <details>
 <summary><strong>Eliminar variety, .config/nanorc y pop-ups inicio</strong></summary>
+<br>
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
 
@@ -82,8 +94,11 @@ set softwrap
 
 </details>
 
+#
+
 <details>
 <summary><strong>Cambiar archivo de alacritty</strong></summary>
+<br>
 
 Ahora vamos a cambiar los archivos de configuracion que pone la distro
 automaticamente por los mios
@@ -95,8 +110,11 @@ cp ~/dotfiles/alacritty.yml .config/alacritty/
 
 </details>
 
+#
+
 <details>
 <summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
+<br>
 
 ```console
 rm -rf ~/.config/bspwm/*;
@@ -105,8 +123,11 @@ cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/
 
 </details>
 
+#
+
 <details>
 <summary><strong>Cambiar de bash a zsh</strong></summary>
+<br>
 
 ```console
 sudo chsh $USER -s /bin/zsh;
@@ -116,8 +137,11 @@ sudo chsh root -s /bin/zsh
 Hacer un relog pulsando Super + X y despues L
 </details>
 
+#
+
 <details>
 <summary><strong>Configurar zsh</strong></summary>
+<br>
 
 ```console
 yay -S zsh-theme-powerlevel10k-git;
@@ -146,8 +170,11 @@ cp ~/dotfiles/.zshrc ~/
 
 </details>
 
+#
+
 <details>
 <summary><strong>Instalar fzf (para hacer fuzzing por directorios y ctrl + r)</strong></summary>
+<br>
 
 ```console
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
@@ -156,8 +183,11 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 
 </details>
 
+#
+
 <details>
 <summary><strong>Setear mi Polybar</strong></summary>
+<br>
 
 ```console
 rm -rf .config/polybar/*;
@@ -166,9 +196,12 @@ cp -r ~/dotfiles/polybar/* .config/polybar/;
 
 </details>
 
+#
+
 <details>
 <summary><strong>Instalar chrome con yay y ponerlo como navegador
 predeterminado</strong></summary>
+<br>
 
 ```console
 yay -S google-chrome;
@@ -178,8 +211,11 @@ xdg-settings set default-web-browser google-chrome.desktop
 
 </details>
 
+#
+
 <details>
 <summary><strong>Configurar Audio</strong></summary>
+<br>
 
 ```console
 pavucontrol
@@ -192,8 +228,11 @@ pavucontrol
 
 </details>
 
+#
+
 <details>
 <summary><strong>Configurar bluetooth</strong></summary>
+<br>
 
 Setear Autoenable=true en `/etc/bluetooth/main.conf`
 
@@ -225,8 +264,11 @@ connect *MAC*
 
 </details>
 
+#
+
 <details>
 <summary><strong>Setear zsh de root</strong></summary>
+<br>
 
 Haremos un link simbólico. La zsh de root apuntará a la del usuario normal. Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
 
@@ -257,8 +299,11 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 
 </details>
 
+#
+
 <details>
 <summary><strong>Configurar rofi (buscador de aplicaciones)</strong></summary>
+<br>
 
 ```console
 rm -rf ~/.config/rofi/*;
@@ -267,8 +312,12 @@ cp ~/dotfiles/rofi/* ~/.config/rofi
 
 </details>
 
+#
+
 <details>
 <summary><strong>Extras</strong></summary>
+<br>
+
 Descargar Visual Studio Code
 
 ```console
@@ -276,3 +325,5 @@ yay -S visual-studio-code-bin
 ```
 
 </details>
+
+#
