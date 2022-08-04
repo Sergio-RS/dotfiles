@@ -197,3 +197,22 @@ connect *MAC*
 ```
 
 </details>
+
+<details>
+<summary><strong>Extras</strong></summary>
+Descargar Visual Studio Code
+
+```console
+yay -S visual-studio-code-bin
+```
+
+Setear git config y generar shh key
+
+```console
+git config --global user.name "Sergio-RS";
+git config --global user.email "sergio.rodriguez.seoane@udc.es";
+ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
+cat .ssh/id_rsa.pub
+```
+
+</details>
