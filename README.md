@@ -1,26 +1,30 @@
-<div align="center"> 
-    <h1><strong>DOTFILES</strong></h1> 
+<div align="center">
+    <h1><strong>DOTFILES</strong></h1>
 </div>
 
 <details open>
 <summary><strong>1. Instalar arcolinuxB bspwm</strong></summary>
-Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-editions/files/ y 
+Descargar la ISO de https://sourceforge.net/projects/arcolinux-community-editions/files/ y
 escoger la version bspwm
 
-Quemar la ISO a un pen con https://www.balena.io/etcher/
+Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 </details>
 
 <details open>
-<summary><strong>2. Eliminar variety, .config/nanorc, pop-ups inicio y setear fondo de pantalla</strong></summary> 
+<summary><strong>2. Eliminar variety, .config/nanorc, pop-ups inicio y setear fondo de pantalla</strong></summary>
 
 Eliminamos variety para que no cambie de fondo de pantalla cada cierto tiempo
+
 ```console
 sudo pacman -Rns variety
 ```
+
 Borrar .config/nanorc. Si queremos cambiar la configuracion de nano esta está en /etc/nanorc
+
 ```console
 rm -r .config/nanorc
 ```
+
 Si tenemos problemas para seleccionar texto y copiarlo en nano comentar la línea set mouse en /etc/nanorc
 Eliminar/Comentar las siguientes lineas en ~/.config/bspwm/autostart.sh
 
@@ -47,6 +51,7 @@ cp -r ~/dotfiles/bspwm/sxhkd/scripts $HOME/.config/bspwm/sxhkd/;
 rm ~/.config/bspwm/sxhkd/sxhkdrc;
 cp ~/dotfiles/bspwm/sxhkd/sxhkdrc
 ```
+
 </details>
 
 <details open>
@@ -57,14 +62,19 @@ yay -S google-chrome;
 export BROWSER="";
 xdg-settings set default-web-browser google-chrome.desktop
 ```
+
 Poner un comando para iniciarlo:
+
 ```console
 nano ~/.config/bspwm/sxhkd/sxhkdrc
 ```
+
 Cambiar el de chromium por chrome:
+
 ```console
 google-chrome-stable
 ```
+
 </details>
 
 <details open>
@@ -88,6 +98,7 @@ sudo pacman -S powerline-common awesome-terminal-fonts
 ```
 
 Ahora vamos a cambiar los archivos de configuracion que pone la distro automaticamente por los mios
+
 ```console
 cd;
 rm .config/alacritty/alacritty.yml;
@@ -97,6 +108,7 @@ cp dotfiles/picom.conf .config/bspwm/;
 rm .config/bspwm/bspwmrc;
 cp dotfiles/bspwmrc .config/bspwm/
 ```
+
 </details>
 
 <details open>
@@ -114,14 +126,15 @@ p10k configure
 ```
 
 Ahora instalamos los plugins en el directorio deseado
+
 ```console
 cd;
 sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins;
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
 ```
 
-
 En el archivo ~/.zshrc añadimos a plugins y comentamos lo siguiente
+
 ```console
 plugins=(
 git
@@ -130,6 +143,7 @@ zsh-autosuggestions
 )
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
+
 </details>
 
 <details open>
@@ -142,4 +156,5 @@ rm -rf .config/polybar/scripts;
 cp dotfiles/polybar/config .config/polybar/;
 cp -r dotfiles/polybar/scripts .config/polybar/
 ```
+
 </details>
