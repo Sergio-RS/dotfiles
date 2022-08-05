@@ -440,7 +440,7 @@ font-1 = "FontAwesome:size=13;0"
 font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 
-modules-left = wireless-network wired-network arch-updates aur-updates system-bluetooth
+modules-left = rofi wireless-network arch-updates aur-updates system-bluetooth
 modules-center = bspwm
 modules-right = battery pavolume backlight date sysmenu
 
@@ -2543,6 +2543,18 @@ format-underline = #62FF00
 
 ################################################################################
 
+[module/rofi]
+type = custom/text
+content = " "
+
+content-background = ${colors.background}
+content-foreground = ${colors.foreground}
+
+click-left = rofi -no-lazy-grab -show drun -theme config.rasi
+
+
+################################################################################
+
 [module/sep]
 ; alternative separator
 type = custom/text
@@ -2805,36 +2817,41 @@ interface = wlp3s0
 interval = 3.0
 label-connected = %essid%
 
-format-connected = <label-connected>
-;format-connected = <ramp-signal> <label-connected>
+;format-connected = %{A1:~/.config/polybar/scripts/rofi-wifi-menu.sh:}<label-connected>%{A}
+format-connected = %{A1:~/.config/polybar/scripts/rofi-wifi-menu.sh:}<ramp-signal> <label-connected>%{A}
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-prefix = " "
+;format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-prefix-background = ${colors.background}
-#format-connected-underline = #7e52c6
+;format-connected-underline = #7e52c6
 
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.alert}
+label-disconnected = " Offline"
+label-disconnected-foreground = ${colors.foreground}
 label-disconnected-background = ${colors.background}
 
-format-disconnected = <label-disconnected>
+format-disconnected = %{A1:~/.config/polybar/scripts/rofi-wifi-menu.sh:}<ramp-signal> <label-disconnected>%{A}
 format-disconnected-foreground = ${colors.alert}
 format-disconnected-background = ${colors.background}
-format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.alert}
+format-disconnected-prefix = "睊"
+format-disconnected-prefix-foreground = ${colors.foreground}
 format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
+;format-disconnected-underline =${colors.alert}
 
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+;ramp-signal-0 = ▁
+;ramp-signal-1 = ▂
+;ramp-signal-2 = ▃
+;ramp-signal-3 = ▄
+;ramp-signal-4 = ▅
+;ramp-signal-5 = ▆
+;ramp-signal-6 = ▇
+;ramp-signal-7 = █
+ramp-signal-0 = 直
+ramp-signal-1 = 直
+ramp-signal-2 = 直
+ramp-signal-3 = 直
+ramp-signal-4 = 直
+ramp-signal-foreground = ${colors.foreground}
 
 ################################################################################
 
