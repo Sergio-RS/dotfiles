@@ -277,6 +277,7 @@ sudo su;
 ln -s -f /home/USUARIO/.zshrc /root/.zshrc;
 #Cerramos terminal y abrimos otra
 sudo su;
+#Configurar p10k y si no sale el promp hacemos:
 p10k configure
 ```
 
@@ -284,7 +285,7 @@ Para configurar el prompt de root y que se sepa que somos superusuarios haremos
 desde root:
 
 ```console
-rm ~/.p10k.zsh
+rm ~/.p10k.zsh;
 cp /home/USUARIO/dotfiles/.p10k.zsh ~/
 ```
 
