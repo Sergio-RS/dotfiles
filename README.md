@@ -122,7 +122,8 @@ cp ~/dotfiles/alacritty.yml .config/alacritty/
 
 ```console
 rm -rf ~/.config/bspwm/*;
-cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/
+cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
+betterlockscreen -u .config/bspwm/betterlockscreen.png
 ```
 
 </details>
