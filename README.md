@@ -188,6 +188,19 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 #
 
 <details>
+<summary><strong>Configurar rofi (buscador de aplicaciones)</strong></summary>
+<br>
+
+```console
+rm -rf ~/.config/rofi/*;
+cp ~/dotfiles/rofi/* ~/.config/rofi
+```
+
+</details>
+
+#
+
+<details>
 <summary><strong>Setear mi Polybar</strong></summary>
 <br>
 
@@ -310,19 +323,6 @@ Desde la consola de root:
 ```console
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 ~/.fzf/install
-```
-
-</details>
-
-#
-
-<details>
-<summary><strong>Configurar rofi (buscador de aplicaciones)</strong></summary>
-<br>
-
-```console
-rm -rf ~/.config/rofi/*;
-cp ~/dotfiles/rofi/* ~/.config/rofi
 ```
 
 </details>
