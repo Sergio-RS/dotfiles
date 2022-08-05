@@ -327,4 +327,10 @@ Descargar Visual Studio Code
 yay -S visual-studio-code-bin
 ```
 
+Emojis de google. Para visualizarlos bien en yt
+
+```console
+sudo pacman -S noto-fonts-emoji
+```
+
 </details>
