@@ -148,6 +148,9 @@ alias la='ls -a'
 alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
+alias cat='bat'
+alais catnn='bat -p'
+
 
 #git
 alias ga='git add .'
