@@ -2707,10 +2707,10 @@ format-connected-prefix-background = ${colors.background}
 format-disconnected-prefix = "ﮤ "
 format-disconnected-prefix-foreground = ${colors.foreground}
 format-disconnected-prefix-background = ${colors.background}
-#format-disconnected = <label-disconnected>
+format-disconnected = <label-disconnected>
 #format-disconnected-underline = ${colors.alert}
 label-disconnected-foreground = ${colors.foreground}
-
+label-disconnected-background = ${colors.background}
 ################################################################################
 
 [module/wireless-network]
