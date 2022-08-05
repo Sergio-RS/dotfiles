@@ -384,12 +384,16 @@ XF86AudioStop
     playerctl stop
 
 #Brightness up
-XF86MonBrightnessUp
-    xbacklight -inc 10
+#XF86MonBrightnessUp
+    #xbacklight -inc 10
 
 #Brightness down
-XF86MonBrightnessDown
-    xbacklight -dec 10
+#XF86MonBrightnessDown
+    #xbacklight -dec 10
+
+#Brightness
+XF86MonBrightness{Up,Down}
+    brightnessctl set {+5%,5%-} && dunstify -a System -t 1000 -h string:x-dunst-stack-tag:volume -h int:value:$(brightnessctl info | grep "Current brightness" | sed 's/.*\((.*)\).*/\1/g' | tr -d '()%') "Brightness: $(brightnessctl info | grep "Current brightness" | sed 's/.*\((.*)\).*/\1/g' | tr -d '()')"
 
 #########################
 #        POLYBAR        #

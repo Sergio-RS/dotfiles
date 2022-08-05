@@ -47,6 +47,12 @@ yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code;
 sudo pacman -S powerline-common awesome-terminal-fonts
 ```
 
+Para controlar el brillo
+
+```console
+sudo pacman -S brightnessctl
+```
+
 </details>
 
 #
