@@ -191,9 +191,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 <summary><strong>Setear mi Polybar</strong></summary>
 <br>
 
+Elegir el comando para copiar la polybar de desktop o de laptop
+
 ```console
 rm -rf ~/.config/polybar/*;
 cp -r ~/dotfiles/polybar/* ~/.config/polybar/
+#Polybar de desktop
+cp ~/dotfiles/polybar-configs/desktop/config ~/.config/polybar/
+#Polybar de laptop
+cp ~/dotfiles/polybar-configs/laptop/config ~/.config/polybar/
 ```
 
 </details>
