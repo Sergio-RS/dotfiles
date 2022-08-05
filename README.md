@@ -77,19 +77,15 @@ Borrar `.config/nanorc`. Si queremos cambiar la configuracion de nano está en
 `/etc/nanorc`
 
 ```console
-rm -rf ~/.config/nanorc
+rm -rf ~/.config/nano
 ```
 
 Para poder seleccionar y copiar con el ratón y wrapear el texto en el
 editor de nano haremos lo siguiente:
 
 ```console
-nano /etc/nanorc
-#Comentar las siguientes líneas:
-#set mouse
-#set linenumber
-#Descomentar la línea:
-set softwrap
+sudo rm /etc/nanorc
+sudo cp ~/dotfiles/nanorc /etc
 ```
 
 </details>
@@ -145,7 +141,7 @@ Hacer un relog pulsando Super + X y despues L
 
 ```console
 yay -S zsh-theme-powerlevel10k-git;
-echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc>;
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
 ```
 
 Cerramos la terminal, abrimos otra y hacemos
@@ -158,7 +154,7 @@ Ahora instalamos los plugins en el directorio deseado
 
 ```console
 sudo cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting /usr/share/oh-my-zsh/plugins;
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins 
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my-zsh/plugins/zsh-autosuggestions
 ```
 
 Borramos archivo `~/.zshrc` y ponemos el que tiene mi configuración
@@ -190,8 +186,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 <br>
 
 ```console
-rm -rf .config/polybar/*;
-cp -r ~/dotfiles/polybar/* .config/polybar/;
+rm -rf ~/.config/polybar/*;
+cp -r ~/dotfiles/polybar/* ~/.config/polybar/
 ```
 
 </details>
@@ -278,13 +274,10 @@ Poner en ***USUARIO*** el nombre de usuario que se usa normalmente
 
 ```console
 sudo su;
-ln -s -f /home/USUARIO/.zsh;
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k;
+ln -s -f /home/USUARIO/.zshrc /root/.zshrc;
 #Cerramos terminal y abrimos otra
 sudo su;
 p10k configure
-#Borramos el archivo de github
-rm -rf powerlevel10k
 ```
 
 Para configurar el prompt de root y que se sepa que somos superusuarios haremos
