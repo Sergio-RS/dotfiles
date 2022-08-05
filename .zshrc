@@ -154,6 +154,8 @@ alias ga='git add .'
 alias gcmsg='git commit -m'
 alias gp='git push'
 alias gs='git status'
+alias gr1='git reset --soft HEAD~1' #This will take back to last commit
+alias gr2='git reset --soft HEAD~2'
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -460,9 +462,11 @@ alias personal='cp -Rf /personal/* ~'
 #sysinfo-retro
 #cpufetch
 #colorscript random
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
