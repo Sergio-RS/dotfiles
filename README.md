@@ -345,4 +345,11 @@ Emojis de google. Para visualizarlos bien en yt
 sudo pacman -S noto-fonts-emoji
 ```
 
+Poner touchpad invertido
+
+```console
+sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo cp ~/dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/
+```
+
 </details>
