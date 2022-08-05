@@ -21,8 +21,10 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 
 ```console
 mirror;
+yay -Syyu;
 update;
-yay -Syyu
+#Si salta error signature from "David Runge <dvzrv@archlinux.org>"...poner lo siguiente
+sudo pacman -S archlinux-keyring; update 
 ```
 
 Setear git config y generar shh key
