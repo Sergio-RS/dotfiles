@@ -1941,7 +1941,7 @@ format-full-padding = 0
 
 label-charging = " %percentage%% "
 
-label-discharging = " %percentage%%%{F-} (%consumption%W) "
+label-discharging = "%percentage%%%{F-}"
 
 ; Available tokens:
 ;   %percentage% (default)
