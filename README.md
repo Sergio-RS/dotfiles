@@ -363,4 +363,10 @@ sudo nano /etc/envioroment
 WINIT_X11_SCALE_FACTOR=1.5
 ```
 
+Configurar lo que hacer al cerrar la tapa:
+
+1. `Super + a` para abrir el buscador de apliaciones
+2. Buscar power manager
+3. Elegir las settings deseadas  
+
 </details>
