@@ -355,4 +355,12 @@ sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
 sudo cp ~/dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
 
+Arreglar error alacritty diferentes tamaños de fuente entre 2 monitores
+
+```console
+sudo nano /etc/envioroment
+#Añadir la siguiente línea
+WINIT_X11_SCALE_FACTOR=1.5
+```
+
 </details>
