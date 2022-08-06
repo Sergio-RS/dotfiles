@@ -152,17 +152,22 @@ function output() {
     then
         echo "ﱝ $curVol%"
     else
-    	if [ "$curVol" -ge "80" ]
-    	then
-        	echo " $curVol%"
-        elif [ "$curVol" -ge "40" ]
-        then
-        	echo "墳 $curVol%"
-        elif [ "$curVol" -gt "0" ]
-        then
-        	echo "奔 $curVol%"
-        else
-        	echo "婢  $curVol%"
+    	re='^[0-9]+$'
+    	if ! [[ $curVol =~ $re ]]; then
+    		echo "婢  $curVol%"
+    	else
+    		if [ "$curVol" -ge "80" ]
+    		then
+        		echo " $curVol%"
+        	elif [ "$curVol" -ge "40" ]
+        	then
+        		echo "墳 $curVol%"
+        	elif [ "$curVol" -gt "0" ]
+        	then
+        		echo "奔 $curVol%"
+        	else
+        		echo "婢  $curVol%"
+        	fi
         fi
     fi
 } #}}}
