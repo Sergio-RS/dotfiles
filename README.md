@@ -336,6 +336,18 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 <summary><strong>Extras</strong></summary>
 <br>
 
+Borrar todas las carpetas innecesarias de `/home/USUARIO` y crear la carpeta de descargas `downloads`
+
+```console
+rm -rf carpeta;
+mkdir downloads
+```
+
+Establecer carpeta de descargas de chrome la que creamos como `downloads`
+1. Ir a las settings de chrome
+2. Buscar descargas en el panel de la izquierda
+3. Cambiar la carpeta default por la nueva
+
 Descargar Visual Studio Code
 
 ```console
