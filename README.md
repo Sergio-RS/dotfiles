@@ -362,9 +362,15 @@ autorand -s undocked
 
 3. Copiar scripts necesarios
 
-Verificar que las variables ***internal_monitor*** (monitor que usaremos como
+```console
+cp ~/dotfiles/autorandr/docked/postswitch ~/.config/autorandr/docked;
+cp ~/dotfiles/autorandr/undocked/postswitch ~/.config/autorandr/undocked;
+cp ~/dotfiles/autorandr/preswitch ~/.config/autorandr/
+```
+
+4. Verificar que las variables ***internal_monitor*** (monitor que usaremos como
 primario) y ***external_monitor*** en el fichero
-`~/.config/autorandr/undocked/postswitch` coinciden con los valores deseados
+`~/.config/autorandr/docked/postswitch` coinciden con los valores deseados
 
 </details>
 
