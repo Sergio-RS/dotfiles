@@ -401,7 +401,7 @@ sudo nano /etc/systemd/logind.conf.d/do-not-suspend.conf
 
 Si queremos configurarlo por interfaz grafica (menos opciones):
 
-1. Descomentar del fichero `~/.config/bspwm/autostart.sh` la linea run xfce4-power-manager &
+1. Descomentar del fichero `~/.config/bspwm/autostart.sh` la linea run `xfce4-power-manager &`
 2. `Super + a` para abrir el buscador de apliaciones
 3. Buscar power manager
 4. Elegir las settings deseadas
