@@ -126,6 +126,9 @@ cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
 betterlockscreen -u .config/bspwm/betterlockscreen.png
 ```
 
+Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
+***primary_monitor*** coincide con el monitor que queremos usar como principal. Para consultar los monitores podemos usar xrandr
+
 </details>
 
 #
@@ -327,6 +330,53 @@ Desde la consola de root:
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 ~/.fzf/install
 ```
+
+</details>
+
+#
+
+<details>
+<summary><strong>Configurar doble monitor</strong></summary>
+<br>
+
+<details open>
+<summary><strong>Configuracion paso a paso</strong></summary>
+<br>
+
+Ejemplo con monitor **primario** `eDP-1` y monitor **secundario** `HDMI-1`
+
+1. Establecer configuracion de pantalla con xrandr sin hdmi y guardarla en autorand
+
+```console
+xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal;
+autorand -s undocked
+```
+
+2. Establecer configuracion de pantalla con xrandr con hdmi conectado al segundo monitor y guardarla en autorand
+
+```console
+#cambiar ultimo parametro si el monitor secundario esta a la derecha del primario por --right-of eDP-1
+xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --left-of eDP-1;
+autorand -s undocked
+```
+
+3. Copiar scripts necesarios
+
+Verificar que las variables ***internal_monitor*** (monitor que usaremos como
+primario) y ***external_monitor*** en el fichero
+`~/.config/autorandr/undocked/postswitch` coinciden con los valores deseados
+
+</details>
+
+<details>
+<summary><strong>Configurar mi caso personal</strong></summary>
+<br>
+
+```console
+cp -r ~/dotfiles/autorandr/* ~/.config/autorandr
+```
+
+</details>
 
 </details>
 

@@ -1,0 +1,19 @@
+#! /bin/sh
+
+internal_monitor=eDP-1
+external_monitor=HDMI-1
+
+desktops_to_move=5
+
+for desktop in $(bspc query -D -m $internal_monitor | sed "1,"$desktops_to_move"d")
+do
+	bspc desktop $desktop --to-monitor $external_monitor
+done
+
+# Remove "Desktop" created by bspwm
+bspc desktop Desktop --remove
+
+bspc desktop 6 -f
+
+
+~/.config/polybar/launch.sh >> /dev/null

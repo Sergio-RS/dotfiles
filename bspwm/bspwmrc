@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#Check with xrandr which is your primary monitor name
+primary_monitor=eDP-1
+
 #LAUNCHERS
 $HOME/.config/bspwm/autostart.sh
 #fix for moving spotify to specific workspace
@@ -41,7 +44,7 @@ bspc config presel_feedback_color	"#5e81ac"
 
 
 #Single monitor
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor $primary_monitor -d 1 2 3 4 5 6 7 8 9 10
 
 #Dual monitor
 #find out names with arandr or xrandr
