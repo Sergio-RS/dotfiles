@@ -381,4 +381,10 @@ Configurar lo que hacer al cerrar la tapa:
 2. Buscar power manager
 3. Elegir las settings deseadas  
 
+Configurar tema de escritorio o mouse
+
+1. `Super + a` para abrir el buscador de apliaciones
+2. Buscar customize look and feel
+3. Elegir las settings deseadas
+
 </details>
