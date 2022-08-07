@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#To ensure all java apps works well under bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 ###
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -149,8 +152,7 @@ alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
 alias cat='bat'
-alais catnn='bat -p'
-
+alias catnn='bat -p'
 
 #git
 alias ga='git add .'
