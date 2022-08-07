@@ -15,5 +15,4 @@ bspc desktop Desktop --remove
 
 bspc desktop 6 -f
 
-
-~/.config/polybar/launch.sh >> /dev/null
+~/.config/polybar/launch.sh
