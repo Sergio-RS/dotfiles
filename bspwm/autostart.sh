@@ -40,7 +40,7 @@ xsetroot -cursor_name left_ptr &
 #run variety &
 run nm-applet &
 run pamac-tray &
-run xfce4-power-manager &
+#run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
 picom --config $HOME/.config/bspwm/picom.conf &

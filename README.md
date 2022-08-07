@@ -333,6 +333,35 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 #
 
 <details>
+<summary><strong>Configurar acciones al cerrar la tapa del portatil</strong></summary>
+<br>
+
+```console
+sudo rm /etc/systemd/logind.conf
+sudo cp ~/dotfiles/logind.conf /etc/systemd
+```
+
+Mirar si funciona correctamente haciendo un reboot. Si hai algun problema
+intentar comentar todas las lineas del fichero
+`/etc/systemd/logind.conf.d/do-not-suspend.conf`
+
+```console
+sudo nano /etc/systemd/logind.conf.d/do-not-suspend.conf
+```
+
+Si queremos configurarlo por interfaz grafica (menos opciones):
+
+1. Descomentar del fichero `~/.config/bspwm/autostart.sh` la linea run xfce4-power-manager &
+2. `Super + a` para abrir el buscador de apliaciones
+3. Buscar power manager
+4. Elegir las settings deseadas
+5. Reboot para aplicar cambios
+
+</details>
+
+#
+
+<details>
 <summary><strong>Extras</strong></summary>
 <br>
 
@@ -344,6 +373,7 @@ mkdir downloads
 ```
 
 Establecer carpeta de descargas de chrome la que creamos como `downloads`
+
 1. Ir a las settings de chrome
 2. Buscar descargas en el panel de la izquierda
 3. Cambiar la carpeta default por la nueva
@@ -374,12 +404,6 @@ sudo nano /etc/envioroment
 #Añadir la siguiente línea
 WINIT_X11_SCALE_FACTOR=1.5
 ```
-
-Configurar lo que hacer al cerrar la tapa:
-
-1. `Super + a` para abrir el buscador de apliaciones
-2. Buscar power manager
-3. Elegir las settings deseadas  
 
 Configurar tema de escritorio o mouse
 
