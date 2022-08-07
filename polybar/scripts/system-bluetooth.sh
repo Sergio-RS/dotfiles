@@ -3,9 +3,18 @@
 bluetooth_connect() {
 	if bluetoothctl show | grep -q "Powered: yes"; then
 		devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
-		for device in $devices_paired; do
-			bluetoothctl connect $device >> /dev/null
+		devices_name=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 3)
+		for ((i=0; i<${#devices_paired[@]}; i++)); do
+		#for device in $devices_paired; do
+			#>> /dev/null
+			notify-send -i "bluetooth" "Trying to connect: ${devices_name[$i]}"
+			connected=$(bluetoothctl connect ${devices_paired[$i]} )
+			if ! [[ "$connected" =~ .*"Failed to connect".* ]]; then
+				notify-send -i "bluetooth" "Connected to ${devices_name[$i]}"
+			fi
 		done
+	else
+		notify-send -i "bluetooth" "Bluetooth powered off, activate it first"
 	fi
 }
 
@@ -35,6 +44,8 @@ bluetooth_print() {
 bluetooth_toggle() {
     if bluetoothctl show | grep -q "Powered: no"; then
         bluetoothctl power on >> /dev/null
+        notify-send -i "bluetooth" "Powered on"
+
     else
         devices_paired=$(bluetoothctl paired-devices | grep Device | cut -d ' ' -f 2)
         echo "$devices_paired" | while read -r line; do
@@ -42,6 +53,7 @@ bluetooth_toggle() {
         done
 
         bluetoothctl power off >> /dev/null
+        notify-send -i "bluetooth" "Powered off"
     fi
 }
 
