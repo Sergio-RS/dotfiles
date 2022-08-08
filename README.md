@@ -173,7 +173,7 @@ Borramos archivo `~/.zshrc` y ponemos el que tiene mi configuración
 
 ```console
 rm ~/.zshrc
-cp ~/dotfiles/.zshrc ~/
+cp ~/dotfiles/zsh/.zshrc ~/
 ```
 
 </details>
@@ -317,7 +317,7 @@ desde root:
 
 ```console
 rm ~/.p10k.zsh;
-cp /home/USUARIO/dotfiles/.p10k.zsh ~/
+cp /home/USUARIO/dotfiles/zsh/.p10k.zsh ~/
 ```
 
 Borrar la carpeta `~/.config/nano` para tener las settings comunes que están en
