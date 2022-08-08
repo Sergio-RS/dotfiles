@@ -421,6 +421,15 @@ Si queremos configurarlo por interfaz grafica (menos opciones):
 <summary><strong>Extras</strong></summary>
 <br>
 
+Establecer login visualmente mas bonito
+
+```console
+sudo pacman -S sddm-sugar-candy-git;
+sudo rm /usr/share/sddm/themes/sugar-candy/theme.conf;
+sudo cp ~/dotfiles/theme.conf /usr/share/sddm/themes/sugar-candy;
+sudo cp ~/dotfiles/sddm.conf /etc
+```
+
 Borrar todas las carpetas innecesarias de `/home/USUARIO` y crear la carpeta de descargas `downloads`
 
 ```console
