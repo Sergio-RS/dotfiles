@@ -1,5 +1,7 @@
 #!/bin/bash
 
+external_monitor=HDMI-1
+
 function run {
   if ! pgrep $1 ;
   then
@@ -14,7 +16,11 @@ function run {
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 #autorandr horizontal
 
-$HOME/.config/polybar/launch.sh &
+#If the second monitor is connected the polybar will be executed with autorandr. Otherwise will execute here on startup
+if [[ $(xrandr -q | grep "$external_monitor disconnected") ]] || [[ $(xrandr -q | grep "$external_monitor") == "" ]]
+then
+    $HOME/.config/polybar/launch.sh &
+fi
 
 #change your keyboard if you need it
 #setxkbmap -layout be
