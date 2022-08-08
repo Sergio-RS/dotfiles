@@ -126,8 +126,11 @@ cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
 betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
 ```
 
-Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
+1. Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
 ***primary_monitor*** coincide con el monitor que queremos usar como principal. Para consultar los monitores podemos usar xrandr
+
+2. Asegurarse que en el fichero `.config/bspwm/autostart.sh` la variable
+***external_monitor*** coincide con el monitor que queremos usar como secundario.
 
 </details>
 
