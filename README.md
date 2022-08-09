@@ -421,6 +421,22 @@ Si queremos configurarlo por interfaz grafica (menos opciones):
 #
 
 <details>
+<summary><strong>Solucionar error hora incorrecta en windows al tener dual boot</strong></summary>
+<br>
+
+En una consola de arcolinux hacer:
+
+```console
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
+Ahora ir a windows y resetear la fecha
+
+</details>
+
+#
+
+<details>
 <summary><strong>Extras</strong></summary>
 <br>
 
