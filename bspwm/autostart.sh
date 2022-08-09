@@ -17,7 +17,7 @@ function run {
 #autorandr horizontal
 
 #If the second monitor is connected the polybar will be executed with autorandr. Otherwise will execute here on startup. If the external monitor dont exist them execute polybar
-if [[ $(xrandr -q | grep "$external_monitor") == "" ]]
+if [[ $(xrandr -q | grep "$external_monitor disconnected") ]] || [[ $(xrandr -q | grep "$external_monitor") == "" ]]
 then
     $HOME/.config/polybar/launch.sh &
 fi
