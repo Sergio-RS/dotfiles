@@ -326,6 +326,10 @@ cp /home/USUARIO/dotfiles/zsh/.p10k.zsh ~/
 Borrar la carpeta `~/.config/nano` para tener las settings comunes que están en
 `/etc/nanorc`
 
+```console
+rm -rf ~/.config/nano
+```
+
 Para tener en root tambien el fzf tenemos que volver a instalarlo en root.
 Desde la consola de root:
 
