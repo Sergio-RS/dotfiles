@@ -497,4 +497,8 @@ Configurar tema de escritorio o mouse
 2. Buscar customize look and feel
 3. Elegir las settings deseadas
 
+Eliminar mensaje Welcome to grub! Seguir los pasos de este github
+
+`https://github.com/ccontavalli/grub-shusher`
+
 </details>
