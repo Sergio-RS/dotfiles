@@ -92,7 +92,7 @@ Para poder seleccionar y copiar con el ratón y wrapear el texto en el
 editor de nano haremos lo siguiente:
 
 ```console
-sudo rm /etc/nanorc
+sudo rm /etc/nanorc;
 sudo cp ~/dotfiles/nanorc /etc
 ```
 
@@ -175,7 +175,7 @@ sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/oh-my
 Borramos archivo `~/.zshrc` y ponemos el que tiene mi configuración
 
 ```console
-rm ~/.zshrc
+rm ~/.zshrc;
 cp ~/dotfiles/zsh/.zshrc ~/
 ```
 
@@ -396,7 +396,7 @@ cp -r ~/dotfiles/autorandr/* ~/.config/autorandr
 <br>
 
 ```console
-sudo rm /etc/systemd/logind.conf
+sudo rm /etc/systemd/logind.conf;
 sudo cp ~/dotfiles/logind.conf /etc/systemd
 ```
 
@@ -479,7 +479,7 @@ sudo pacman -S noto-fonts-emoji
 Poner touchpad invertido
 
 ```console
-sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf;
 sudo cp ~/dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
 
