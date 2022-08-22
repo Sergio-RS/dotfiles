@@ -503,6 +503,6 @@ Configurar tema de escritorio o mouse
 
 Eliminar mensaje Welcome to grub! Seguir los pasos de este github
 
-`https://github.com/ccontavalli/grub-shusher`
+<https://github.com/ccontavalli/grub-shusher>
 
 </details>
