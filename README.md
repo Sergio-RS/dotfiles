@@ -16,24 +16,14 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 #
 
 <details>
-<summary><strong>Actualizar la distro y instalar dependencias</strong></summary>
+<summary><strong>Actualizar distro y dependencias</strong></summary>
 <br>
 
 ```console
 mirror;
-yay -Syyu;
-update;
-#Si salta error signature from "David Runge <dvzrv@archlinux.org>"...poner lo siguiente
-sudo pacman -S archlinux-keyring; update 
-```
-
-Setear git config y generar shh key
-
-```console
-git config --global user.name "Sergio-RS";
-git config --global user.email "sergio.rodriguez.seoane@udc.es";
-ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
-cat .ssh/id_rsa.pub
+sudo pacman -S archlinux-keyring; #Evitar error al actualizar 
+yay -Syyyu;
+sudo pacman -Syyyu;
 ```
 
 Descargar lsd
@@ -53,6 +43,23 @@ Para controlar el brillo
 
 ```console
 sudo pacman -S brightnessctl
+```
+
+</details>
+
+# 
+
+<details>
+<summary><strong>Configuración github</strong></summary>
+<br>
+
+Setear git config y generar shh key
+
+```console
+git config --global user.name "Sergio-RS";
+git config --global user.email "sergio.rodriguez.seoane@udc.es";
+ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
+cat .ssh/id_rsa.pub
 ```
 
 </details>
