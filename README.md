@@ -16,33 +16,38 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 #
 
 <details>
-<summary><strong>Actualizar distro y dependencias</strong></summary>
+<summary><strong>Clonar el repositorio</strong></summary>
 <br>
 
 ```console
-mirror;
+git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
+```
+
+</details>
+
+#
+
+<details>
+<summary><strong>Actualizar distro</strong></summary>
+<br>
+
+```console
+sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/1mirrorlist;
 sudo pacman -S archlinux-keyring; #Evitar error al actualizar 
 yay -Syyyu;
 sudo pacman -Syyyu;
 ```
 
-Descargar lsd
+</details>
+
+#
+
+<details>
+<summary><strong>Instalar dependencias</strong></summary>
+<br>
 
 ```console
-sudo pacman -S lsd
-```
-
-Fuentes necesarias
-
-```console
-yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code;
-sudo pacman -S powerline-common awesome-terminal-fonts
-```
-
-Para controlar el brillo
-
-```console
-sudo pacman -S brightnessctl
+sudo pacman -S lsd powerline-common awesome-terminal-fonts bspwm sxhkd rofi polybar dunst pulseaudio feh brightnessctl playerctl flameshot bc bluez bluez-utils
 ```
 
 </details>
@@ -60,18 +65,6 @@ git config --global user.name "Sergio-RS";
 git config --global user.email "sergio.rodriguez.seoane@udc.es";
 ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
 cat .ssh/id_rsa.pub
-```
-
-</details>
-
-#
-
-<details>
-<summary><strong>Clonar el repositorio</strong></summary>
-<br>
-
-```console
-git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
 ```
 
 </details>
@@ -102,42 +95,6 @@ editor de nano haremos lo siguiente:
 sudo rm /etc/nanorc;
 sudo cp ~/dotfiles/nanorc /etc
 ```
-
-</details>
-
-#
-
-<details>
-<summary><strong>Cambiar archivo de alacritty</strong></summary>
-<br>
-
-Ahora vamos a cambiar los archivos de configuracion que pone la distro
-automaticamente por los mios
-
-```console
-rm ~/.config/alacritty/alacritty.yml;
-cp ~/dotfiles/alacritty.yml .config/alacritty/
-```
-
-</details>
-
-#
-
-<details>
-<summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
-<br>
-
-```console
-rm -rf ~/.config/bspwm/*;
-cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
-betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
-```
-
-1. Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
-***primary_monitor*** coincide con el monitor que queremos usar como principal. Para consultar los monitores podemos usar xrandr
-
-2. Asegurarse que en el fichero `.config/bspwm/autostart.sh` la variable
-***external_monitor*** coincide con el monitor que queremos usar como secundario.
 
 </details>
 
@@ -191,13 +148,72 @@ cp ~/dotfiles/zsh/.zshrc ~/
 #
 
 <details>
-<summary><strong>Instalar fzf (para hacer fuzzing por directorios y ctrl + r)</strong></summary>
+<summary><strong>Configuracion alacritty, bspwm, sxhkd, picom, rofi, polybar</strong></summary>
+<br>
+
+<details open>
+<summary><strong>Mediante gtheme</strong></summary>
+
+1. Instalar gtheme <https://github.com/daavidrgz/gtheme>
+
+2. Copiar config del desktop a la capeta correspondiente de gtheme
+
+```console
+cp -r ~/dotfiles/gtheme-sergio ~/.config/gtheme/desktops/gtheme-sergio;
+cp -r ~/dotfiles/alacritty ~/.config/gtheme/desktops/gtheme-sergio/.config/alacritty
+cp -r ~/dotfiles/bspwm ~/.config/gtheme/desktops/gtheme-sergio/.config/bspwm
+cp -r ~/dotfiles/kitty ~/.config/gtheme/desktops/gtheme-sergio/.config/kitty
+cp -r ~/dotfiles/picom ~/.config/gtheme/desktops/gtheme-sergio/.config/picom
+cp -r ~/dotfiles/polybar ~/.config/gtheme/desktops/gtheme-sergio/.config/polybar
+cp -r ~/dotfiles/rofi ~/.config/gtheme/desktops/gtheme-sergio/.config/rofi
+cp -r ~/dotfiles/sxhkd ~/.config/gtheme/desktops/gtheme-sergio/.config/sxhkd
+```
+
+3. Setear configuracion
+
+```console
+gtheme desktop apply gtheme-sergio
+```
+
+</details>
+
+#
+
+<details>
+<summary><strong>Por linea de comandos sin gtheme</strong></summary>
+<br>
+
+<details>
+<summary><strong>Cambiar archivo de alacritty</strong></summary>
+<br>
+
+Ahora vamos a cambiar los archivos de configuracion que pone la distro
+automaticamente por los mios
+
+```console
+rm ~/.config/alacritty/alacritty.yml;
+cp ~/dotfiles/alacritty.yml .config/alacritty/
+```
+
+</details>
+
+#
+
+<details>
+<summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
 <br>
 
 ```console
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
-~/.fzf/install
+rm -rf ~/.config/bspwm/*;
+cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
+betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
 ```
+
+1. Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
+***primary_monitor*** coincide con el monitor que queremos usar como principal. Para consultar los monitores podemos usar xrandr
+
+2. Asegurarse que en el fichero `.config/bspwm/autostart.sh` la variable
+***external_monitor*** coincide con el monitor que queremos usar como secundario.
 
 </details>
 
@@ -229,6 +245,21 @@ cp -r ~/dotfiles/polybar/* ~/.config/polybar/
 cp ~/dotfiles/polybar-configs/desktop/config ~/.config/polybar/
 #Polybar de laptop
 cp ~/dotfiles/polybar-configs/laptop/config ~/.config/polybar/
+```
+
+</details>
+</details>
+</details>
+
+#
+
+<details>
+<summary><strong>Instalar fzf (para hacer fuzzing por directorios y ctrl + r)</strong></summary>
+<br>
+
+```console
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
+~/.fzf/install
 ```
 
 </details>
