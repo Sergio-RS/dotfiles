@@ -195,8 +195,6 @@ cp ~/dotfiles/alacritty.yml .config/alacritty/
 
 </details>
 
-#
-
 <details>
 <summary><strong>Setear mi configuración de bspwm, sxhkd y picom</strong></summary>
 <br>
@@ -215,8 +213,6 @@ betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
 
 </details>
 
-#
-
 <details>
 <summary><strong>Configurar rofi (buscador de aplicaciones)</strong></summary>
 <br>
@@ -227,8 +223,6 @@ cp ~/dotfiles/rofi/* ~/.config/rofi
 ```
 
 </details>
-
-#
 
 <details>
 <summary><strong>Setear mi Polybar</strong></summary>
