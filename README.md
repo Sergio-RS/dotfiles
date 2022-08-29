@@ -46,8 +46,16 @@ sudo pacman -Syyyu;
 <summary><strong>Instalar dependencias</strong></summary>
 <br>
 
+App y utilidades
+
 ```console
-sudo pacman -S lsd powerline-common awesome-terminal-fonts bspwm sxhkd rofi polybar dunst pulseaudio feh brightnessctl playerctl flameshot bc bluez bluez-utils
+sudo pacman -S bspwm sxhkd rofi polybar picom dunst pulseaudio feh brightnessctl lsd playerctl flameshot bc bluez bluez-utils alacritty kitty discord neofetch powerline-common awesome-terminal-fonts
+```
+
+Fuentes
+
+```console
+yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code
 ```
 
 </details>
