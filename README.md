@@ -484,7 +484,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 <summary><strong>Extras</strong></summary>
 <br>
 
-Establecer login visualmente mas bonito
+Establecer login visualmente mas bonito:
 
 ```console
 sudo pacman -S sddm-sugar-candy-git;
@@ -493,14 +493,14 @@ sudo cp ~/dotfiles/sddm/theme.conf /usr/share/sddm/themes/sugar-candy;
 sudo cp ~/dotfiles/sddm/sddm.conf /etc
 ```
 
-Borrar todas las carpetas innecesarias de `/home/USUARIO` y crear la carpeta de descargas `downloads`
+Borrar todas las carpetas innecesarias de `/home/USUARIO` y crear la carpeta de descargas `downloads`:
 
 ```console
 rm -rf carpeta;
 mkdir downloads
 ```
 
-Establecer carpeta de descargas de chrome la que creamos como `downloads`
+Establecer carpeta de descargas de chrome la que creamos como `downloads`:
 
 1. Ir a las settings de chrome
 2. Buscar descargas en el panel de la izquierda
@@ -512,20 +512,20 @@ Descargar Visual Studio Code
 yay -S visual-studio-code-bin
 ```
 
-Emojis de google. Para visualizarlos bien en yt
+Emojis de google. Para visualizarlos bien en yt:
 
 ```console
 sudo pacman -S noto-fonts-emoji
 ```
 
-Poner touchpad invertido
+Poner touchpad invertido:
 
 ```console
 sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf;
 sudo cp ~/dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
 
-Arreglar error alacritty diferentes tamaños de fuente entre 2 monitores
+Arreglar error alacritty diferentes tamaños de fuente entre 2 monitores:
 
 ```console
 sudo nano /etc/envioroment
@@ -533,7 +533,7 @@ sudo nano /etc/envioroment
 WINIT_X11_SCALE_FACTOR=1.5
 ```
 
-Configurar tema de escritorio o mouse
+Configurar tema de escritorio o mouse:
 
 1. `Super + a` para abrir el buscador de apliaciones
 2. Buscar customize look and feel
@@ -542,5 +542,17 @@ Configurar tema de escritorio o mouse
 Eliminar mensaje Welcome to grub! Seguir los pasos de este github
 
 <https://github.com/ccontavalli/grub-shusher>
+
+Resolver error status bateria:
+
+```console
+sudo nano /etc/modprobe.d/asus_ec_sensors.conf
+```
+
+Añadir la siguiente linea
+
+```console
+blacklist asus_ec_sensors
+```
 
 </details>
