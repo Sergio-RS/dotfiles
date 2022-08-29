@@ -177,8 +177,6 @@ gtheme desktop apply gtheme-sergio
 
 </details>
 
-#
-
 <details>
 <summary><strong>Por linea de comandos sin gtheme</strong></summary>
 <br>
