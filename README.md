@@ -181,7 +181,7 @@ gtheme desktop apply gtheme-sergio
 <summary><strong>Por linea de comandos sin gtheme</strong></summary>
 <br>
 
-<details>
+<details open>
 <summary><strong>Cambiar archivo de alacritty</strong></summary>
 <br>
 
