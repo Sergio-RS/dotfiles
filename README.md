@@ -175,6 +175,7 @@ cp -r ~/dotfiles/picom ~/.config/gtheme/desktops/gtheme-sergio/.config/picom
 cp -r ~/dotfiles/polybar ~/.config/gtheme/desktops/gtheme-sergio/.config/polybar
 cp -r ~/dotfiles/rofi ~/.config/gtheme/desktops/gtheme-sergio/.config/rofi
 cp -r ~/dotfiles/sxhkd ~/.config/gtheme/desktops/gtheme-sergio/.config/sxhkd
+cp -r ~/dotfiles/dunst ~/.config/gtheme/desktops/gtheme-sergio/.config/dunst
 ```
 
 3. Setear configuracion
