@@ -415,7 +415,7 @@ super + y
 
 #Picom Toggle
 ctrl + alt + o
-    ~/.config/bspwm/scripts/picom-toggle.sh
+    ~/.config/sxhkd/scripts/picom-toggle.sh
 
 #################################################################
 # SUPER + KEYS
@@ -459,7 +459,7 @@ super + BackSpace
 
 # Move floating window
 super + alt + ctrl {_,shift + }{Left,Down,Up,Right}
-	~/.config/bspwm/scripts/move-window {_,edge-}{west,south,north,east}
+	~/.config/sxhkd/scripts/move-window {_,edge-}{west,south,north,east}
 
 #################################################################
 # SUPER + CONTROL KEYS
@@ -495,7 +495,7 @@ super + {_,shift + }{Left,Down,Up,Right}
 
 # Custom resize
 super + alt + {Left,Down,Up,Right}
-	~/.config/bspwm/sxhkd/scripts/custom_resize {west,south,north,east}
+	~/.config/sxhkd/scripts/custom_resize {west,south,north,east}
 
 # Flip layout vertically/horizontally
 super + {_,shift + }a
