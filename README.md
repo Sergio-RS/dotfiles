@@ -49,7 +49,7 @@ sudo pacman -Syyyu;
 App y utilidades
 
 ```console
-sudo pacman -S bspwm sxhkd rofi polybar picom dunst pulseaudio feh brightnessctl lsd playerctl flameshot bc bluez bluez-utils alacritty kitty discord neofetch powerline-common awesome-terminal-fonts
+sudo pacman -S bspwm sxhkd rofi polybar picom dunst pulseaudio feh brightnessctl lsd playerctl flameshot bc bluez bluez-utils alacritty kitty discord neofetch powerline-common awesome-terminal-fonts papirus-icon-theme
 ```
 
 Fuentes

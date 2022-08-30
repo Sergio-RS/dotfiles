@@ -347,17 +347,23 @@ F12
 #################################################################
 
 #Raises volume
-XF86AudioRaiseVolume
-    amixer set Master 10%+
+#XF86AudioRaiseVolume
+#    amixer set Master 10%+
 
 #Lowers volume
-XF86AudioLowerVolume
-    amixer set Master 10%-
+#XF86AudioLowerVolume
+#    amixer set Master 10%-
 
 #Mute
-XF86AudioMute
-    amixer -D pulse set Master 1+ toggle
+#XF86AudioMute
+#    amixer -D pulse set Master 1+ toggle
 
+XF86Audio{Raise,Lower}Volume
+	~/.config/sxhkd/scripts/manageVolume.sh {--increase,--decrease}
+
+XF86AudioMute
+    ~/.config/sxhkd/scripts/manageVolume.sh --toggle
+    
 #Playerctl works for Pragha, Spotify and others
 #Delete the line for playerctl if you want to use mpc
 #and replace it with the corresponding code
