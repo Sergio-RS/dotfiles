@@ -71,7 +71,7 @@ font = DejaVuSansMono Nerd Font Medium 11
 
 markup = full
 
-format = "<b>%a</b> | %s\n%b\n"
+format = "%s\n%b\n"
 
 alignment = center
 
