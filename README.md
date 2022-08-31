@@ -46,10 +46,10 @@ sudo pacman -Syyyu;
 <summary><strong>Instalar dependencias</strong></summary>
 <br>
 
-App y utilidades
+Apps, utilidades, fuentes e iconos
 
 ```console
-sudo pacman -S bspwm sxhkd rofi polybar picom dunst pulseaudio feh brightnessctl lsd playerctl flameshot bc bluez bluez-utils alacritty kitty discord neofetch powerline-common awesome-terminal-fonts papirus-icon-theme
+sudo pacman -S bspwm sxhkd rofi polybar picom dunst pulseaudio feh brightnessctl lsd playerctl flameshot bc bluez bluez-utils alacritty kitty discord neofetch powerline-common awesome-terminal-fonts papirus-icon-theme noto-fonts-emoji
 ```
 
 Fuentes
@@ -168,14 +168,7 @@ cp ~/dotfiles/zsh/.zshrc ~/
 
 ```console
 cp -r ~/dotfiles/gtheme-sergio ~/.config/gtheme/desktops/gtheme-sergio;
-cp -r ~/dotfiles/alacritty ~/.config/gtheme/desktops/gtheme-sergio/.config/alacritty
-cp -r ~/dotfiles/bspwm ~/.config/gtheme/desktops/gtheme-sergio/.config/bspwm
-cp -r ~/dotfiles/kitty ~/.config/gtheme/desktops/gtheme-sergio/.config/kitty
-cp -r ~/dotfiles/picom ~/.config/gtheme/desktops/gtheme-sergio/.config/picom
-cp -r ~/dotfiles/polybar ~/.config/gtheme/desktops/gtheme-sergio/.config/polybar
-cp -r ~/dotfiles/rofi ~/.config/gtheme/desktops/gtheme-sergio/.config/rofi
-cp -r ~/dotfiles/sxhkd ~/.config/gtheme/desktops/gtheme-sergio/.config/sxhkd
-cp -r ~/dotfiles/dunst ~/.config/gtheme/desktops/gtheme-sergio/.config/dunst
+cp -r ~/dotfiles/.config/* ~/.config/gtheme/desktops/gtheme-sergio/.config/
 ```
 
 3. Setear configuracion
@@ -199,7 +192,7 @@ automaticamente por los mios
 
 ```console
 rm ~/.config/alacritty/alacritty.yml;
-cp ~/dotfiles/alacritty.yml .config/alacritty/
+cp ~/dotfiles/.config/alacritty/alacritty.yml .config/alacritty/
 ```
 
 </details>
@@ -210,8 +203,8 @@ cp ~/dotfiles/alacritty.yml .config/alacritty/
 
 ```console
 rm -rf ~/.config/bspwm/*;
-cp -r ~/dotfiles/bspwm/* ~/.config/bspwm/;
-betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
+cp -r ~/dotfiles/.config/bspwm/* ~/.config/bspwm/;
+betterlockscreen -u ~/dotfiles/wallpapers/windows-panic.png
 ```
 
 1. Asegurarse que en el fichero `.config/bspwm/bspwmrc` la variable
@@ -228,7 +221,7 @@ betterlockscreen -u ~/.config/bspwm/betterlockscreen.png
 
 ```console
 rm -rf ~/.config/rofi/*;
-cp ~/dotfiles/rofi/* ~/.config/rofi
+cp ~/dotfiles/.config/rofi/* ~/.config/rofi
 ```
 
 </details>
@@ -241,11 +234,7 @@ Elegir el comando para copiar la polybar de desktop o de laptop
 
 ```console
 rm -rf ~/.config/polybar/*;
-cp -r ~/dotfiles/polybar/* ~/.config/polybar/
-#Polybar de desktop
-cp ~/dotfiles/polybar-configs/desktop/config ~/.config/polybar/
-#Polybar de laptop
-cp ~/dotfiles/polybar-configs/laptop/config ~/.config/polybar/
+cp -r ~/dotfiles/.config/polybar/* ~/.config/polybar/
 ```
 
 </details>
@@ -511,12 +500,6 @@ Descargar Visual Studio Code
 
 ```console
 yay -S visual-studio-code-bin
-```
-
-Emojis de google. Para visualizarlos bien en yt:
-
-```console
-sudo pacman -S noto-fonts-emoji
 ```
 
 Poner touchpad invertido:
