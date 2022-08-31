@@ -7,16 +7,16 @@ bluetooth_connect() {
 		for ((i=0; i<${#devices_paired[@]}; i++)); do
 		#for device in $devices_paired; do
 			#>> /dev/null
-			notify-send -i "bluetooth" "Trying to connect: ${devices_name[$i]}"
+			notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Trying to connect: ${devices_name[$i]}"
 			connected=$(bluetoothctl connect ${devices_paired[$i]} )
 			if ! [[ "$connected" =~ .*"Failed to connect".* ]]; then
-				notify-send -i "bluetooth" "Connection established with ${devices_name[$i]}"
+				notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Connection established with ${devices_name[$i]}"
 			else
-				notify-send -i "bluetooth" "Connection failed with ${devices_name[$i]}"
+				notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Connection failed with ${devices_name[$i]}"
 			fi
 		done
 	else
-		notify-send -i "bluetooth" "Bluetooth powered off, activate it first"
+		notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Bluetooth powered off, activate it first"
 	fi
 }
 
@@ -46,7 +46,7 @@ bluetooth_print() {
 bluetooth_toggle() {
     if bluetoothctl show | grep -q "Powered: no"; then
         bluetoothctl power on >> /dev/null
-        notify-send -i "bluetooth" "Powered on"
+        notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Bluetooth powered on"
 
     else
         devices_paired=$(bluetoothctl devices | grep Device | cut -d ' ' -f 2)
@@ -55,7 +55,7 @@ bluetooth_toggle() {
         done
 
         bluetoothctl power off >> /dev/null
-        notify-send -i "bluetooth" "Powered off"
+        notify-send -i /usr/share/icons/Papirus/128x128/apps/bluetooth-48.svg "Bluetooth powered off"
     fi
 }
 
