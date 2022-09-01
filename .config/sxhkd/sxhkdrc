@@ -544,10 +544,12 @@ super + ctrl + {u,i,o,p}
 	bspc node --presel-dir \~{west,south,north,east}
 
 # Define splitting ratio for next window on leaf/parent
-super + ctrl + {_,shift +}{1-9}
-	bspc node {_,@/} --presel-ratio 0.{1-9}
+#super + ctrl + {_,shift +}{1-9}
+#	bspc node {_,@/} --presel-ratio 0.{1-9}
 
-
+# Move focused workspace for selected workspace without then focusing it
+super + ctrl + {1-9}
+	bspc node -d ^{1-9,10}
 #################################################################
 # ALT KEYS
 #################################################################
