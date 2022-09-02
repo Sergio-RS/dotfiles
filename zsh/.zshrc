@@ -162,6 +162,9 @@ alias gs='git status'
 alias gr1='git reset --soft HEAD~1' #This will take back to last commit
 alias gr2='git reset --soft HEAD~2'
 
+#clear pacman and yay packages cache
+alias delpackcache='yay -Sc'
+
 #fix obvious typo's
 alias cd..='cd ..'
 alias pdw='pwd'
