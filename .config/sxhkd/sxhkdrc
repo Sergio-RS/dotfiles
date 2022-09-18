@@ -170,8 +170,8 @@ ctrl + alt + b
      #catfish
 
 #Chrome
-ctrl + alt + c
-    google-chrome-stable
+#ctrl + alt + c
+#    google-chrome-stable
 super + c
 	google-chrome-stable
 
