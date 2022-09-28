@@ -440,7 +440,7 @@ font-1 = "FontAwesome:size=13;0"
 font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 
-modules-left = rofi wireless-network arch-updates aur-updates system-bluetooth
+modules-left = rofi wireless-network arch-updates aur-updates system-bluetooth keyboard-layout
 modules-center = bspwm
 modules-right = battery pavolume backlight date sysmenu
 
@@ -3028,3 +3028,16 @@ label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+####################################################################
+[module/keyboard-layout]
+type = custom/script
+exec = setxkbmap -query | grep layout | cut -d ':' -f 2 | sed 's/^[ \t]*//'
+interval = 5
+label = %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground}
+click-left = setxkbmap es
+click-right = setxkbmap us
