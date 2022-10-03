@@ -82,13 +82,17 @@ super + x
 super + k
 	betterlockscreen -l dim -- --time-str="%H:%M"
 
+#Change keyboard layout
+super + l
+	~/.config/sxhkd/scripts/change_keyboard_layout.sh
+
 #Rofi theme selector
 super + r
     rofi-theme-selector
 
 #Urxvt
-super + t
-    urxvt
+#super + t
+#    urxvt
 
 #Pavucontrol
 super + v
@@ -196,8 +200,8 @@ ctrl + alt + p
     pamac-manager
 
 #Xfce4-settings-manager
-ctrl + alt + m
-     xfce4-settings-manager
+#ctrl + alt + m
+#     xfce4-settings-manager
 
 #Pulse Audio Control
 ctrl + alt + u
@@ -224,8 +228,8 @@ ctrl + alt + v
     vivaldi-stable
 
 #Xfce4-appfinder
-ctrl + alt + a
-    xfce4-appfinder
+#ctrl + alt + a
+#    xfce4-appfinder
 
 
 #Keyboard dependent
@@ -271,12 +275,12 @@ alt + f
 #    variety --resume
 
 #Xfce appfinder
-alt + F2
-    xfce4-appfinder --collapsed
+#alt + F2
+#    xfce4-appfinder --collapsed
 
 #Xfce4-appfinder
-alt + F3
-    xfce4-appfinder
+#alt + F3
+#    xfce4-appfinder
 
 #Xlunch app launcher
 #alt + F5
@@ -312,8 +316,8 @@ alt + shift + u
 #################################################################
 
 #Xcfe4-TaskManager
-ctrl + shift + Escape
-    xfce4-taskmanager
+#ctrl + shift + Escape
+#    xfce4-taskmanager
 
 
 #################################################################
@@ -326,7 +330,7 @@ Print
 
 #screeenshooter
 ctrl + Print
-     xfce4-screenshooter
+	xfce4-screenshooter
 
 #Gnome-Screenshot
 ctrl + shift + Print
@@ -338,8 +342,8 @@ ctrl + shift + Print
 #################################################################
 
 #xfce4-terminal dropdown
-F12
-    xfce4-terminal --drop-down
+#F12
+#    xfce4-terminal --drop-down
 
 
 #################################################################
@@ -432,7 +436,7 @@ super + f
 	bspc node --state \~fullscreen
 
 # Toggle pseudo tiling of window
-super + p
+super + t
 	bspc node --state \~pseudo_tiled
 
 #kill
