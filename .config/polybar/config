@@ -3040,4 +3040,4 @@ format-background = ${colors.background}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 click-left = setxkbmap es; notify-send "Changing keyboard layout to spanish..."
-click-right = setxkbmap us; notify-send "Changing keyboard layout to english..."
+click-right = setxkbmap -layout us -variant altgr-intl; notify-send "Changing keyboard layout to english..."
