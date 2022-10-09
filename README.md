@@ -168,6 +168,7 @@ cp ~/dotfiles/zsh/.zshrc ~/
 
 ```console
 cp -r ~/dotfiles/gtheme-sergio ~/.config/gtheme/desktops/gtheme-sergio;
+mkdir ~/.config/gtheme/desktops/gtheme-sergio/.config;
 cp -r ~/dotfiles/.config/* ~/.config/gtheme/desktops/gtheme-sergio/.config/
 ```
 
