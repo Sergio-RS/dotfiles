@@ -16,8 +16,18 @@ Quemar la ISO a un pen con <https://www.balena.io/etcher/>
 #
 
 <details>
-<summary><strong>Clonar el repositorio</strong></summary>
+<summary><strong>Clonar el repositorio y setear config github</strong></summary>
 <br>
+
+Setear git config y generar shh key
+
+```console
+git config --global user.name "Sergio-RS";
+git config --global user.email "sergio.rodriguez.seoane@udc.es";
+ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
+cat .ssh/id_rsa.pub
+
+Clonar repositiorio
 
 ```console
 git clone https://github.com/Sergio-RS/dotfiles.git ~/dotfiles
@@ -56,23 +66,6 @@ Fuentes
 
 ```console
 yay -S nerd-fonts-cascadia-code nerd-fonts-dejavu-complete nerd-fonts-fira-code
-```
-
-</details>
-
-# 
-
-<details>
-<summary><strong>Configuración github</strong></summary>
-<br>
-
-Setear git config y generar shh key
-
-```console
-git config --global user.name "Sergio-RS";
-git config --global user.email "sergio.rodriguez.seoane@udc.es";
-ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
-cat .ssh/id_rsa.pub
 ```
 
 </details>
