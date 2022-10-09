@@ -26,6 +26,7 @@ git config --global user.name "Sergio-RS";
 git config --global user.email "sergio.rodriguez.seoane@udc.es";
 ssh-keygen -o -t rsa -C "sergio.rodriguez.seoane@udc.es";
 cat .ssh/id_rsa.pub
+```
 
 Clonar repositiorio
 
@@ -516,21 +517,5 @@ Configurar tema de escritorio o mouse:
 1. `Super + a` para abrir el buscador de apliaciones
 2. Buscar customize look and feel
 3. Elegir las settings deseadas
-
-Eliminar mensaje Welcome to grub! Seguir los pasos de este github
-
-<https://github.com/ccontavalli/grub-shusher>
-
-Resolver error status bateria:
-
-```console
-sudo nano /etc/modprobe.d/asus_ec_sensors.conf
-```
-
-Añadir la siguiente linea
-
-```console
-blacklist asus_ec_sensors
-```
 
 </details>
