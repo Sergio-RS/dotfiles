@@ -518,4 +518,33 @@ Configurar tema de escritorio o mouse:
 2. Buscar customize look and feel
 3. Elegir las settings deseadas
 
+Para popular las keys de pacman:
+
+```console
+sudo pacman-key --init
+sudo pacman-key --populate
+sudo pacman-key --refresh-keys
+sudo pacman -Sy archlinux-keyring
+```
+
+Si hay error de keys con los repositorios de arcolinux al hacer
+un update o intentar instalar algo:
+
+```console
+sudo nano /etc/systemd/system/pacman-init.service
+
+#Cambiar el contenido por lo siguiente:
+[Unit]
+Description=Initializes Pacman keyring
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/pacman-key --init
+ExecStart=/usr/bin/pacman-key --populate
+
+[Install]
+WantedBy=multi-user.target
+```
+
 </details>
