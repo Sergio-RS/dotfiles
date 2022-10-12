@@ -1839,7 +1839,7 @@ format-background = ${colors.background}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 #format-underline = ${colors.foreground}
-click-left = alacritty -e sudo pacman -Syyu; notify-send "Package Manager" "Arch updated"
+click-left = alacritty -e sudo pacman -Syyyu; notify-send "Package Manager" "Arch updated"
 
 [module/aur-updates]
 type = custom/script
@@ -1852,7 +1852,7 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 #format-padding = 2
 #format-underline = #FFBB00
-click-left = alacritty -e yay -Syyu; notify-send "Package Manager" "Aur updated"
+click-left = alacritty -e yay -Syyyu; notify-send "Package Manager" "Aur updated"
 
 ################################################################################
 

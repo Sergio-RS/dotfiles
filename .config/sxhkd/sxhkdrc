@@ -98,6 +98,14 @@ super + r
 super + v
     pavucontrol
 
+#Update arch
+super + u
+	alacritty -e sudo pacman -Syyyu; notify-send "Package Manager" "Arch updated"
+
+#Update aur
+super + y
+	alacritty -e yay -Syyyu; notify-send "Package Manager" "Aur updated"
+
 #Pragha
 super + m
     pragha
@@ -410,7 +418,7 @@ XF86MonBrightness{Up,Down}
 #########################
 
 #Hide polybar
-super + y
+super + p
     polybar-msg cmd toggle
 
 #################################################################
