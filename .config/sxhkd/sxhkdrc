@@ -447,6 +447,10 @@ super + f
 super + t
 	bspc node --state \~pseudo_tiled
 
+# Toggle tiling of window
+super + shift + f
+    bspc node --state \~floating
+
 #kill
 super + q
 	bspc node -c
