@@ -547,4 +547,36 @@ ExecStart=/usr/bin/pacman-key --populate
 WantedBy=multi-user.target
 ```
 
+Programa para editar pdf:
+
+```console
+sudo pacman -S okular
+```
+
+Comando okular para abrir pdf y que no dependa de esa terminal:
+
+```console
+okular nombre-archivo.pdf &; disown
+```
+
+Manejo distintas versiones java:
+
+1. Para instalar versiones:
+
+```console
+sudo pacman -S openjdk11-src #Cambiar 11 por la version deseada
+```
+
+2. Para mirar que jdk está en uso:
+
+```console
+archlinux-java status
+```
+
+3. Para cambiar el jdk en uso:
+
+```console
+sudo archlinux-java set java-11-openjdk #Cambiar 11 por la versión deseada
+```
+
 </details>
