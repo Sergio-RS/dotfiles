@@ -387,7 +387,7 @@ autorandr -s undocked
 ```console
 #cambiar ultimo parametro si el monitor secundario esta a la derecha del primario por --right-of eDP-1
 xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --left-of eDP-1;
-autorandr -s undocked
+autorandr -s docked
 ```
 
 3. Copiar scripts necesarios
