@@ -375,19 +375,19 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf;
 
 Ejemplo con monitor **primario** `eDP-1` y monitor **secundario** `HDMI-1`
 
-1. Establecer configuracion de pantalla con xrandr sin hdmi y guardarla en autorand
+1. Establecer configuracion de pantalla con xrandr sin hdmi y guardarla en autorandr
 
 ```console
 xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal;
-autorand -s undocked
+autorandr -s undocked
 ```
 
-2. Establecer configuracion de pantalla con xrandr con hdmi conectado al segundo monitor y guardarla en autorand
+2. Establecer configuracion de pantalla con xrandr con hdmi conectado al segundo monitor y guardarla en autorandr
 
 ```console
 #cambiar ultimo parametro si el monitor secundario esta a la derecha del primario por --right-of eDP-1
 xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --left-of eDP-1;
-autorand -s undocked
+autorandr -s undocked
 ```
 
 3. Copiar scripts necesarios
