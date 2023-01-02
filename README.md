@@ -504,12 +504,22 @@ sudo rm /etc/X11/xorg.conf.d/30-touchpad.conf;
 sudo cp ~/dotfiles/30-touchpad.conf /etc/X11/xorg.conf.d/
 ```
 
-Arreglar error alacritty diferentes tamaños de fuente entre 2 monitores:
+Cambiar escalado alacritty al tener dos monitores:
+
+1. Se puede hacer editando el fichero `alacritty.yml`
+
+```console
+nano ~/.config/alacritty/alacritty.yml
+#Editar la línea que sea como la siguiente poniendo en 1.4 el valor deseado
+WINIT_X11_SCALE_FACTOR=1.4
+```
+
+2. O podemos editar la variable de entorno directamente
 
 ```console
 sudo nano /etc/envioroment
 #Añadir la siguiente línea
-WINIT_X11_SCALE_FACTOR=1.5
+WINIT_X11_SCALE_FACTOR=1.4
 ```
 
 Configurar tema de escritorio o mouse:
