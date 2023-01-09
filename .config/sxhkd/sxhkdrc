@@ -106,6 +106,10 @@ super + u
 super + y
 	alacritty -e yay -Syyyu; notify-send "Package Manager" "Aur updated"
 
+#Spotify
+super + s
+	spotify
+
 #Pragha
 super + m
     pragha
